@@ -32,6 +32,7 @@ export const projects = [
     image: Oskido,
     category: "Illustrations",
     tools: ["Adobe Illustrator", "Adobe Photoshop", "Figma"],
+    links: "/illustrations",
   },
 
   {
@@ -134,7 +135,7 @@ export const DesignProjects = () => {
                 </button>
 
                 <Link
-                  to={`/projects/${selectProject.id}`}
+                  to={selectProject.link || `/projects/${selectProject.id}`}
                   className="inline-block mt-4 px-4 py-2 bg-primary text-white rounded hover:bg-primary/80 transition"
                 >
                   View Project

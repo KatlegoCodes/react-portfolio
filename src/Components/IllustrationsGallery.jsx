@@ -1,12 +1,12 @@
 import React from "react";
-import illustration_1 from "../assets/Illustrations/illustration-1.png";
-import illustration_2 from "../assets/Illustrations/illustration-2.png";
-import illustration_3 from "../assets/Illustrations/illustration-3.png";
-import illustration_4 from "../assets/Illustrations/illustration-4.png";
-import illustration_5 from "../assets/Illustrations/illustration-5.png";
-import illustration_6 from "../assets/Illustrations/illustration-6.png";
+import illustration_1 from "../assets/Illustrations/illustration-1.jpg";
+import illustration_2 from "../assets/Illustrations/illustration-2.jpg";
+import illustration_3 from "../assets/Illustrations/illustration-3.jpg";
+import illustration_4 from "../assets/Illustrations/illustration-4.jpg";
+import illustration_5 from "../assets/Illustrations/illustration-5.jpg";
+import illustration_6 from "../assets/Illustrations/illustration-6.jpg";
 
-export const IllustratuinGallery = () => {
+export const IllustrationsGallery = () => {
   const illustrations = [
     illustration_1,
     illustration_2,

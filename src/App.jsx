@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Hero } from "./Components/Hero";
 import { DesignProjects } from "./Components/DesignProjects";
 import { ProjectDetails } from "./Components/ProjectDetails";
-import { IllustratuinGallery } from "./Components/IllustrationsGallery";
+import { IllustrationsGallery } from "./Components/IllustrationsGallery";
 
 export const App = () => {
   return (
@@ -22,7 +22,7 @@ export const App = () => {
         />
 
         {/* Project details route  */}
-        <Route path="/projects/id" element={<ProjectDetails />} />
+        <Route path="/projects/:id" element={<ProjectDetails />} />
 
         {/* fallback 404 route */}
         <Route
@@ -38,7 +38,7 @@ export const App = () => {
             </div>
           }
         />
-        <Route path="/illustrations" element={<IllustratuinGallery />} />
+        <Route path="/illustrations" element={<IllustrationsGallery />} />
       </Routes>
     </Router>
   );
