@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Hero } from "./Components/Hero";
 import { DesignProjects } from "./Components/DesignProjects";
 import { ProjectDetails } from "./Components/ProjectDetails";
+import { IllustratuinGallery } from "./Components/IllustrationsGallery";
 
 export const App = () => {
   return (
@@ -37,6 +38,7 @@ export const App = () => {
             </div>
           }
         />
+        <Route path="/illustrations" element={<IllustratuinGallery />} />
       </Routes>
     </Router>
   );
