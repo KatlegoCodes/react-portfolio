@@ -32,7 +32,7 @@ export const projects = [
     image: Oskido,
     category: "Illustrations",
     tools: ["Adobe Illustrator", "Adobe Photoshop", "Figma"],
-    links: "/illustrations",
+    link: "/illustrations",
   },
 
   {
