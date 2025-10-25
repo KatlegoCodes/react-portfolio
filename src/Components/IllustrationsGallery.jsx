@@ -87,7 +87,7 @@ export const IllustrationsGallery = () => {
         backgroundPosition: "center",
       }}
     >
-      <div className="absolute inset-0 bg-black/30 backdrop-blur-[2px]" />
+      <div className="absolute inset-0 bg-black/30 max-h-full backdrop-blur-[2px]" />
       <div className="relative max-w-6xl mx-auto text-center text-white z-10">
         {/* Header */}
         <motion.div
