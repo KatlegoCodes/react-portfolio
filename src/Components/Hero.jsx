@@ -1,5 +1,4 @@
 import React from "react";
-import hero_bg from "../assets/hero-bg.jpg";
 import arrow_right from "../assets/arrow-right-solid-full.svg";
 import github from "../assets/github-brands-solid-full.svg";
 import linkedin from "../assets/square-linkedin-brands-solid-full.svg";
@@ -12,7 +11,7 @@ export const Hero = () => {
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10 dark:opacity-5"
-        style={{ backgroundImage: `url(${hero_bg})` }}
+        style={{ backgroundImage: `url("src/assets/background.jpg")` }}
       />
 
       {/* Content */}

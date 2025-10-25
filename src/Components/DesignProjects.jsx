@@ -1,7 +1,7 @@
 import React from "react";
 import design_project_1 from "../assets/design1.jpg";
 import design_project_2 from "../assets/Rebrand-pc.jpg";
-import Oskido from "../assets/Oskido.jpg";
+import illustration_8 from "../assets/Illustration-8.jpg";
 import poster from "../assets/Siya.jpg";
 import { Link } from "react-router-dom";
 
@@ -29,7 +29,7 @@ export const projects = [
     title: "Editorial Illustrations",
     description:
       "A series of commissioned illustrations exploring color, texture, and visual storytelling.",
-    image: Oskido,
+    image: illustration_8,
     category: "Illustrations",
     tools: ["Adobe Illustrator", "Adobe Photoshop", "Figma"],
     link: "/illustrations",
@@ -43,6 +43,7 @@ export const projects = [
     image: poster,
     category: "Poster Design",
     tools: ["Adobe Illustrator", "Adobe Photoshop", "Figma"],
+    link: "/posters",
   },
 ];
 
