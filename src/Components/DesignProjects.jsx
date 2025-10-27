@@ -14,6 +14,7 @@ export const projects = [
     image: design_project_1,
     category: "Branding",
     tools: ["Adobe Illustrator", "Adobe Photoshop", "Figma"],
+    link: "/brand-identity",
   },
   {
     id: 2,

@@ -125,7 +125,7 @@ export const IllustrationsGallery = () => {
               />
 
               {/* Overlay Title */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end">
+              <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end">
                 <p className="text-white text-lg font-medium p-4">
                   {item.title}
                 </p>

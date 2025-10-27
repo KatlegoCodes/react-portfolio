@@ -6,6 +6,7 @@ import { DesignProjects } from "./Components/DesignProjects";
 import { ProjectDetails } from "./Components/ProjectDetails";
 import { IllustrationsGallery } from "./Components/IllustrationsGallery";
 import { SportPosters } from "./Components/SportPosters";
+import { BrandIdentity } from "./Components/BrandIdentity";
 
 export const App = () => {
   return (
@@ -41,6 +42,7 @@ export const App = () => {
         />
         <Route path="/illustrations" element={<IllustrationsGallery />} />
         <Route path="/posters" element={<SportPosters />} />
+        <Route path="brand-identity" element={<BrandIdentity />} />
       </Routes>
     </Router>
   );
