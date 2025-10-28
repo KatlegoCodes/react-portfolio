@@ -1,48 +1,80 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import brand_logo from "../assets/Brand Identity Design/Brand-Logo.png";
+import { X } from "lucide-react";
+import brand_logo from "../assets/Brand Identity Design/Brand-logo.png";
 import wallpaper from "../assets/Brand Identity Design/Wallpaper.jpg";
 import wallpaper_2 from "../assets/Brand Identity Design/Grey-Wallpaper.jpg";
 import business_card from "../assets/Brand Identity Design/Business-Card-design.jpg";
-import letterhead from "../assets/Brand Identity Design/letterhead.jpg";
+import letterhead from "../assets/Brand Identity Design/Letterhead.jpg";
 
-export const BrandIdentity = () => {
-  const tools = ["Photoshop", "Illustrator", "InDesign", "Figma"];
+const images = [brand_logo, wallpaper, wallpaper_2, business_card, letterhead];
+
+export const BrandIdentity = ({ isOpen, onClose }) => {
+  React.useEffect(() => {
+    const handleEscape = (event) => {
+      if (event.key === "Escape") {
+        onClose();
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener("keydown", handleEscape);
+      document.body.style.overflow = "hidden";
+    }
+
+    return () => {
+      document.removeEventListener("keydown", handleEscape);
+      document.body.style.overflow = "unset";
+    };
+  }, [isOpen, onClose]);
 
   return (
-    <section className="min-h-screen bg-background text-white py-20 px-6">
-      <div className="max-w-6xl max-auto">
-        {/* Hero Section */}
+    <AnimatePresence>
+      {isOpen && (
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
-          <img
-            src={brand_logo}
-            alt="brand logo"
-            className="w-40 h-40 mx-auto rounded-full mb-6 object-cover shadow-lg"
-          />
-        </motion.div>
-
-        {/* Overview */}
-        <motion.div
+          className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-4"
           initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.3, duration: 1 }}
-          className="text-center max-w-3xl max-auto mb-20"
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={onClose}
         >
-          <p className="text-lg leading-relaxed mb-8">
-            The brand identity was crafted to position the firm as a
-            contemporary leader in the legal field, building upon its legacy of
-            excellence. We developed a sophisticated visual system grounded in
-            authoritative typography, clean compositions, and a refined color
-            palette that communicates both integrity and forward-thinking
-            clarity.
-          </p>
+          <motion.div
+            className="relative w-full max-w-6xl h-[95vh] overflow-y-auto rounded-2xl shadow-2xl bg-[#0e0e0e]"
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.9, opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            onClick={(event) => event.stopPropagation()}
+          >
+            <button
+              onClick={onClose}
+              className="absolute top-4 right-4 text-white hover:text-gray-400 z-50 bg-black/50 rounded-full p-2 backdrop-blur-sm transition-all duration-200 hover:bg-black/70 hover:scale-110"
+            >
+              <X size={24} />
+            </button>
+
+            <div className="flex flex-col items-center space-y-8 py-10 px-4">
+              {images.map((img, index) => (
+                <motion.div
+                  key={index}
+                  className="w-full flex justify-center"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1, duration: 0.5 }}
+                >
+                  <motion.img
+                    src={img}
+                    alt={`Brand Identity ${index + 1}`}
+                    className="rounded-xl max-w-full h-auto shadow-lg"
+                    whileHover={{ scale: 1.01 }}
+                    transition={{ type: "spring", stiffness: 120 }}
+                  />
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
         </motion.div>
-      </div>
-    </section>
+      )}
+    </AnimatePresence>
   );
 };

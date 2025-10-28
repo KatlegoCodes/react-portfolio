@@ -4,6 +4,7 @@ import design_project_2 from "../assets/Rebrand-pc.jpg";
 import illustration_8 from "../assets/Illustration-8.jpg";
 import poster from "../assets/Siya.jpg";
 import { Link } from "react-router-dom";
+import { BrandIdentity } from "./BrandIdentity";
 
 export const projects = [
   {
@@ -35,7 +36,6 @@ export const projects = [
     tools: ["Adobe Illustrator", "Adobe Photoshop", "Figma"],
     link: "/illustrations",
   },
-
   {
     id: 4,
     title: "Sport Posters",
@@ -50,11 +50,12 @@ export const projects = [
 
 export const DesignProjects = () => {
   const [selectProject, setSelectProject] = React.useState(null);
+  const [openBrandModal, setOpenBrandModal] = React.useState(false);
 
   return (
     <section className="py-20 bg-background text-center">
       <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-7xl font-bold mb-12 text-gray-700 ">
+        <h2 className="text-7xl font-bold mb-12 text-gray-700">
           Featured Work
         </h2>
         <p className="text-lg md:text-2xl max-w-3xl mx-auto mb-16 text-muted-foreground">
@@ -70,17 +71,14 @@ export const DesignProjects = () => {
               className="relative group overflow-hidden rounded-xl shadow-lg cursor-pointer"
               onClick={() => setSelectProject(project)}
             >
-              {/* Project Image */}
               <img
                 src={project.image}
                 alt={project.title}
                 className="w-full h-80 object-cover transition-transform duration-700 ease-out group-hover:scale-110"
               />
 
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-              {/* Title & Category */}
               <div className="absolute bottom-4 left-4 text-left translate-y-8 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
                 <h3 className="text-white text-xl font-semibold">
                   {project.title}
@@ -93,11 +91,11 @@ export const DesignProjects = () => {
           ))}
         </div>
 
-        {/* Modal */}
+        {/* Project Modal */}
         {selectProject && (
           <div
             className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-6"
-            onClick={() => setSelectProject(null)} // close when clicking outside
+            onClick={() => setSelectProject(null)}
           >
             <div
               className="relative bg-white dark:bg-neutral-900 rounded-xl shadow-2xl max-w-3xl w-full overflow-hidden"
@@ -117,35 +115,44 @@ export const DesignProjects = () => {
                 </p>
 
                 <div className="flex flex-wrap gap-2 mb-6">
-                  {selectProject.tools.map((tool) => {
-                    return (
-                      <span
-                        key={tool}
-                        className="px-3 py-1 bg-primary/10 text-primary text-sm rounded-sm border border-primary/20"
-                      >
-                        {tool}
-                      </span>
-                    );
-                  })}
+                  {selectProject.tools.map((tool) => (
+                    <span
+                      key={tool}
+                      className="px-3 py-1 bg-primary/10 text-primary text-sm rounded-sm border border-primary/20"
+                    >
+                      {tool}
+                    </span>
+                  ))}
                 </div>
 
-                <button
-                  onClick={() => setSelectProject(null)}
-                  className="absolute top-4 right-4 text-muted-foreground hover:text-primary text-2xl font-bold"
-                >
-                  X
-                </button>
-
-                <Link
-                  to={selectProject.link || `/projects/${selectProject.id}`}
-                  className="inline-block mt-4 px-4 py-2 bg-primary text-white rounded hover:bg-primary/80 transition"
-                >
-                  View Project
-                </Link>
+                {selectProject.id === 1 ? (
+                  <button
+                    onClick={() => {
+                      setOpenBrandModal(true);
+                      setSelectProject(null);
+                    }}
+                    className="inline-block mt-4 px-4 py-2 bg-primary text-white rounded hover:bg-primary/80 transition"
+                  >
+                    View Project
+                  </button>
+                ) : (
+                  <Link
+                    to={selectProject.link || `/projects/${selectProject.id}`}
+                    className="inline-block mt-4 px-4 py-2 bg-primary text-white rounded hover:bg-primary/80 transition"
+                  >
+                    View Project
+                  </Link>
+                )}
               </div>
             </div>
           </div>
         )}
+
+        {/* Brand Identity Modal */}
+        <BrandIdentity
+          isOpen={openBrandModal}
+          onClose={() => setOpenBrandModal(false)}
+        />
       </div>
     </section>
   );

@@ -1,6 +1,5 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
 import { Hero } from "./Components/Hero";
 import { DesignProjects } from "./Components/DesignProjects";
 import { ProjectDetails } from "./Components/ProjectDetails";
@@ -12,7 +11,6 @@ export const App = () => {
   return (
     <Router>
       <Routes>
-        {/* Home route: hero + project grid */}
         <Route
           path="/"
           element={
@@ -22,11 +20,10 @@ export const App = () => {
             </>
           }
         />
-
-        {/* Project details route  */}
         <Route path="/projects/:id" element={<ProjectDetails />} />
-
-        {/* fallback 404 route */}
+        <Route path="/illustrations" element={<IllustrationsGallery />} />
+        <Route path="/posters" element={<SportPosters />} />
+        <Route path="/brand-identity" element={<BrandIdentity />} />
         <Route
           path="*"
           element={
@@ -40,9 +37,6 @@ export const App = () => {
             </div>
           }
         />
-        <Route path="/illustrations" element={<IllustrationsGallery />} />
-        <Route path="/posters" element={<SportPosters />} />
-        <Route path="brand-identity" element={<BrandIdentity />} />
       </Routes>
     </Router>
   );
