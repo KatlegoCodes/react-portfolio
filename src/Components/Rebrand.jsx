@@ -1,30 +1,28 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
-import rebrand from "../assets/Football Club rebrand/Rebrand-pc";
+import rebrand from "../assets/Football Club rebrand/Rebrand-pc.jpg";
 
 const images = [rebrand];
 
 export const Rebrand = ({ isOpen, onClose }) => {
-  React.useEffect(
-    (event) => {
-      const handleEscape = (event) => {
-        if (event.key === "Escape") {
-          onClose();
-        }
-      };
-
-      if (isOpen) {
-        document.addEventListener("keydown", handleEscape);
-        document.body.style.overflow = "hidden";
+  React.useEffect(() => {
+    const handleEscape = (event) => {
+      if (event.key === "Escape") {
+        onClose();
       }
-      return () => {
-        document.removeEventListener("keydown", handleEscape);
-        document.body.style.overflow = "unset";
-      };
-    },
-    [isOpen, onClose]
-  );
+    };
+
+    if (isOpen) {
+      document.addEventListener("keydown", handleEscape);
+      document.body.style.overflow = "hidden";
+    }
+
+    return () => {
+      document.removeEventListener("keydown", handleEscape);
+      document.body.style.overflow = "unset";
+    };
+  }, [isOpen, onClose]);
 
   return (
     <AnimatePresence>
@@ -51,10 +49,10 @@ export const Rebrand = ({ isOpen, onClose }) => {
               <X size={24} />
             </button>
 
-            <div>
-              {images.map((img, index) => {
+            <div className="flex flex-col items-center space-y-8 py-10 px-4">
+              {images.map((img, index) => (
                 <motion.div
-                  key={id}
+                  key={index}
                   className="w-full flex justify-center"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -63,12 +61,12 @@ export const Rebrand = ({ isOpen, onClose }) => {
                   <motion.img
                     src={img}
                     alt={`Rebrand ${index + 1}`}
-                    className="rounded-xl max-w-full h-auto shadow-lg"
+                    className="rounded-xl max-w-[90vw] h-auto shadow-lg"
                     whileHover={{ scale: 1.01 }}
                     transition={{ type: "spring", stiffness: 120 }}
                   />
-                </motion.div>;
-              })}
+                </motion.div>
+              ))}
             </div>
           </motion.div>
         </motion.div>

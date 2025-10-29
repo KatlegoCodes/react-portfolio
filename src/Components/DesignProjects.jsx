@@ -5,13 +5,14 @@ import illustration_8 from "../assets/Illustration-8.jpg";
 import poster from "../assets/Siya.jpg";
 import { Link } from "react-router-dom";
 import { BrandIdentity } from "./BrandIdentity";
+import { Rebrand } from "./Rebrand";
 
 export const projects = [
   {
     id: 1,
     title: "Brand Identity Design",
     description:
-      "Complete brand identity package including logo design, business cards, letterheads and brand guidelines for a modern tech start-up.",
+      "Complete brand identity package including logo design, business cards, letterheads, and brand guidelines for a modern tech start-up.",
     image: design_project_1,
     category: "Branding",
     tools: ["Adobe Illustrator", "Adobe Photoshop", "Figma"],
@@ -25,6 +26,7 @@ export const projects = [
     image: design_project_2,
     category: "Logo Design",
     tools: ["Adobe Illustrator", "Adobe Photoshop", "Figma"],
+    link: "/rebrand",
   },
   {
     id: 3,
@@ -51,6 +53,7 @@ export const projects = [
 export const DesignProjects = () => {
   const [selectProject, setSelectProject] = React.useState(null);
   const [openBrandModal, setOpenBrandModal] = React.useState(false);
+  const [openRebrandModal, setOpenRebrandModal] = React.useState(false);
 
   return (
     <section className="py-20 bg-background text-center">
@@ -60,10 +63,11 @@ export const DesignProjects = () => {
         </h2>
         <p className="text-lg md:text-2xl max-w-3xl mx-auto mb-16 text-muted-foreground">
           Explore my latest projects spanning frontend development and graphic
-          design Each project represents a unique challenge and creative
-          solution
+          design. Each project represents a unique challenge and creative
+          solution.
         </p>
 
+        {/* PROJECT GRID */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {projects.map((project) => (
             <div
@@ -76,9 +80,7 @@ export const DesignProjects = () => {
                 alt={project.title}
                 className="w-full h-80 object-cover transition-transform duration-700 ease-out group-hover:scale-110"
               />
-
               <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
               <div className="absolute bottom-4 left-4 text-left translate-y-8 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
                 <h3 className="text-white text-xl font-semibold">
                   {project.title}
@@ -91,7 +93,7 @@ export const DesignProjects = () => {
           ))}
         </div>
 
-        {/* Project Modal */}
+        {/* MODAL PREVIEW */}
         {selectProject && (
           <div
             className="fixed inset-0 z-50 flex items-center justify-center bg-black/30 backdrop-blur-sm p-6"
@@ -125,10 +127,21 @@ export const DesignProjects = () => {
                   ))}
                 </div>
 
+                {/* CONDITIONAL BUTTONS */}
                 {selectProject.id === 1 ? (
                   <button
                     onClick={() => {
                       setOpenBrandModal(true);
+                      setSelectProject(null);
+                    }}
+                    className="inline-block mt-4 px-4 py-2 bg-primary text-white rounded hover:bg-primary/80 transition"
+                  >
+                    View Project
+                  </button>
+                ) : selectProject.id === 2 ? (
+                  <button
+                    onClick={() => {
+                      setOpenRebrandModal(true);
                       setSelectProject(null);
                     }}
                     className="inline-block mt-4 px-4 py-2 bg-primary text-white rounded hover:bg-primary/80 transition"
@@ -148,10 +161,16 @@ export const DesignProjects = () => {
           </div>
         )}
 
-        {/* Brand Identity Modal */}
+        {/* BRAND IDENTITY MODAL */}
         <BrandIdentity
           isOpen={openBrandModal}
           onClose={() => setOpenBrandModal(false)}
+        />
+
+        {/* REBRAND MODAL */}
+        <Rebrand
+          isOpen={openRebrandModal}
+          onClose={() => setOpenRebrandModal(false)}
         />
       </div>
     </section>
