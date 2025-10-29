@@ -11,6 +11,7 @@ import poster_7 from "../assets/Sport Posters/poster-7.jpg";
 import poster_8 from "../assets/Sport Posters/poster-8.jpg";
 import poster_9 from "../assets/Sport Posters/poster-9.jpg";
 import poster_10 from "../assets/Sport Posters/poster-10.jpg";
+import poster_11 from "../assets/Sport Posters/poster-11.jpg";
 
 // Add a close icon component
 const X = () => (
@@ -41,6 +42,7 @@ export const SportPosters = () => {
     { id: 8, src: poster_8, title: "Kaizer Chiefs" },
     { id: 9, src: poster_9, title: "Serving Kant" },
     { id: 10, src: poster_10, title: "Team SA 4x100m" },
+    { id: 11, src: poster_11, title: "Lions T20 Champions" },
   ];
 
   // Keyboard navigation and body scroll lock
