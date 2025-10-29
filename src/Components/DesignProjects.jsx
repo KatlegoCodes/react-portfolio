@@ -77,7 +77,7 @@ export const DesignProjects = () => {
                 className="w-full h-80 object-cover transition-transform duration-700 ease-out group-hover:scale-110"
               />
 
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
               <div className="absolute bottom-4 left-4 text-left translate-y-8 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
                 <h3 className="text-white text-xl font-semibold">
@@ -94,7 +94,7 @@ export const DesignProjects = () => {
         {/* Project Modal */}
         {selectProject && (
           <div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-6"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/30 backdrop-blur-sm p-6"
             onClick={() => setSelectProject(null)}
           >
             <div
