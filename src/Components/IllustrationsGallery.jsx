@@ -10,6 +10,7 @@ import illustration_6 from "../assets/Illustrations/illustration-6.jpg";
 import illustration_7 from "../assets/Illustrations/illustration-7.jpg";
 import illustration_8 from "../assets/Illustrations/illustration-8.jpg";
 import illustration_9 from "../assets/Illustrations/illustration-9.jpg";
+import illustration_10 from "../assets/Illustrations/illustration-10.jpg";
 
 // Add a close icon component
 const X = () => (
@@ -39,6 +40,7 @@ export const IllustrationsGallery = () => {
     { id: 7, src: illustration_7, title: "The Flame" },
     { id: 8, src: illustration_8, title: "The Chiller" },
     { id: 9, src: illustration_9, title: "The Muse" },
+    { id: 10, src: illustration_10, title: "The Visionary" },
   ];
 
   // Keyboard navigation and body scroll lock
