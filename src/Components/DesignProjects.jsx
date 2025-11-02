@@ -59,7 +59,7 @@ export const DesignProjects = () => {
     <section className="py-20 bg-background text-center">
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-7xl font-bold mb-12 text-gray-700">
-          Featured Work
+          Graphic Design
         </h2>
         <p className="text-lg md:text-2xl max-w-3xl mx-auto mb-16 text-muted-foreground">
           Explore my latest projects spanning frontend development and graphic

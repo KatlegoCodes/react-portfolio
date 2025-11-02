@@ -1,11 +1,11 @@
 import React from "react";
 import { ExternalLink, Github } from "lucide-react";
 import image_1 from "../assets/frontend/design1.jpg";
-import image_2 from "../assets/frontend/design2.jpg";
+import image_2 from "../assets/frontend/design2.png";
 import image_3 from "../assets/frontend/design3.jpg";
 import image_4 from "../assets/frontend/design4.jpg";
 
-export const frontendProjects = () => [
+export const frontendProjects = [
   {
     id: 1,
     title: "E-Commerce Platform",
@@ -18,20 +18,18 @@ export const frontendProjects = () => [
     githubUrl: "https://github.com/katlegoCodes/ecommerce-platform",
     featured: true,
   },
-
   {
     id: 2,
     title: "Chef Claude's Recipes",
     description:
       "A recipe app that allows users to browse, search, and save their favorite recipes. Built with React and a RESTful API.",
     image: image_2,
-    category: "fullstack",
+    category: "Fullstack",
     technologies: ["React", "Tailwind"],
     liveUrl: "https://chef-claudes-recipes.example.com",
     githubUrl: "https://github.com/katlegoCodes/Chef-Claudes-Recipes",
     featured: true,
   },
-
   {
     id: 3,
     title: "Tenzies Game",
@@ -44,7 +42,6 @@ export const frontendProjects = () => [
     githubUrl: "https://github.com/katlegoCodes/Tenzies",
     featured: true,
   },
-
   {
     id: 4,
     title: "Assembly-Endgame Clone",
@@ -60,7 +57,7 @@ export const frontendProjects = () => [
 ];
 
 export const FrontendProjects = () => {
-  const [SelectedProject, setSelectedProject] = React.useState(null);
+  const [selectedProject, setSelectedProject] = React.useState(null); // Fixed casing
 
   return (
     <section className="py-20 bg-background text-center">
@@ -97,7 +94,7 @@ export const FrontendProjects = () => {
 
                 <div className="p-6 text-left">
                   <div className="flex items-center justify-between mb-3">
-                    <span className="text-sm font-medium text-blue-600 dark:to-blue-400 bg-blue-50 dark:bg-blue/30 px-3 py-1 rounded-full">
+                    <span className="text-sm font-medium text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30 px-3 py-1 rounded-full">
                       {project.category}
                     </span>
                   </div>
@@ -110,12 +107,13 @@ export const FrontendProjects = () => {
                     {project.description}
                   </p>
 
-                  <div>
+                  {/* Technologies - Fixed: added flex-wrap and gap */}
+                  <div className="flex flex-wrap gap-2 mb-4">
                     {project.technologies.map((tech) => {
                       return (
                         <span
                           key={tech}
-                          className="px-3 py-1 bg-gray-100 dark:bg-gray-700 dark:text-gray-300 text-xs rounded-md"
+                          className="px-3 py-1 bg-gray-100 dark:bg-gray-600 text-gray-700 dark:text-gray-300 text-xs rounded-md"
                         >
                           {tech}
                         </span>
@@ -123,24 +121,26 @@ export const FrontendProjects = () => {
                     })}
                   </div>
 
+                  {/* Action Buttons - Fixed: proper spacing and event handling */}
                   <div className="flex space-x-3">
                     <a
                       href={project.liveUrl}
                       target="_blank"
-                      rel="nooperner noreferrer"
+                      rel="noopener noreferrer" // Fixed typo
                       className="flex items-center justify-center flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg transition-colors text-sm font-medium"
                       onClick={(event) => event.stopPropagation()}
                     >
-                      <ExternalLink size={24} className="mr-2"></ExternalLink>
+                      <ExternalLink size={16} className="mr-2" />
                       Live Demo
                     </a>
                     <a
-                      href={project.githubUrl}
+                      href={project.githubUrl} // Fixed: was using SelectedProject instead of project
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center justify-center flex-1 bg-gray-800 hover:bg-gray-900 text-white py-2 px-4 rounded-lg transition-colors text-sm font-medium"
+                      onClick={(event) => event.stopPropagation()}
                     >
-                      <Github size={16} />
+                      <Github size={16} className="mr-2" />
                       Code
                     </a>
                   </div>
@@ -150,26 +150,27 @@ export const FrontendProjects = () => {
           })}
         </div>
 
-        {SelectedProject && (
+        {/* Project Detail Modal - Fixed variable name */}
+        {selectedProject && (
           <div
             className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-6"
             onClick={() => setSelectedProject(null)}
           >
             <div
               className="relative bg-white dark:bg-gray-800 rounded-xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
-              onClick={(event) => event.stopPropagation}
+              onClick={(event) => event.stopPropagation()}
             >
               <img
-                src={SelectedProject.image}
-                alt={SelectedProject.title}
+                src={selectedProject.image}
+                alt={selectedProject.title}
                 className="w-full h-80 object-cover"
               />
               <div className="p-8">
                 <div className="flex items-center justify-between mb-4">
                   <span className="text-sm font-medium text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30 px-3 py-1 rounded-full">
-                    {SelectedProject.category}
+                    {selectedProject.category}
                   </span>
-                  {setSelectedProject.featured && (
+                  {selectedProject.featured && (
                     <span className="text-sm font-medium text-green-600 bg-green-50 dark:bg-green-900/30 px-3 py-1 rounded-full">
                       Featured Project
                     </span>
@@ -177,24 +178,24 @@ export const FrontendProjects = () => {
                 </div>
 
                 <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-                  {SelectedProject.title}
+                  {selectedProject.title}
                 </h3>
 
                 <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed mb-6">
-                  {SelectedProject.description}
+                  {selectedProject.description}
                 </p>
 
                 <div className="mb-8">
                   <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                    Technologies used
+                    Technologies Used
                   </h4>
 
                   <div className="flex flex-wrap gap-2">
-                    {SelectedProject.technologies.map((tech) => {
+                    {selectedProject.technologies.map((tech) => {
                       return (
                         <span
                           key={tech}
-                          className="px-4 py-2 bg-gray-100 dark:bg-gray-700 text-shadow-gray-700 dark:text-gray-300 rounded-lg font-medium"
+                          className="px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg font-medium"
                         >
                           {tech}
                         </span>
@@ -203,23 +204,25 @@ export const FrontendProjects = () => {
                   </div>
                 </div>
 
-                <div>
+                {/* Modal Action Buttons - Fixed: added flex and spacing */}
+                <div className="flex space-x-4">
                   <a
-                    href={SelectedProject.liveUrl}
+                    href={selectedProject.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-center flex-1 bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-lg transition-colors font-medium"
                   >
-                    <ExternalLink size={18} className="mr-2" /> View Live Demo
+                    <ExternalLink size={18} className="mr-2" />
+                    View Live Demo
                   </a>
                   <a
-                    href={SelectedProject.liveUrl}
+                    href={selectedProject.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-center flex-1 bg-gray-800 hover:bg-gray-900 text-white py-3 px-6 rounded-lg transition-colors font-medium"
                   >
                     <Github size={18} className="mr-2" />
-                    View source code
+                    View Source Code
                   </a>
                 </div>
               </div>
@@ -230,3 +233,5 @@ export const FrontendProjects = () => {
     </section>
   );
 };
+
+export default FrontendProjects;

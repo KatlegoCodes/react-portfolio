@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Hero } from "./Components/Hero";
-import { DesignProjects } from "./Components/DesignProjects";
+import { PortfolioSection } from "./Components/PortfolioSection"; // ← NEW
 import { ProjectDetails } from "./Components/ProjectDetails";
 import { IllustrationsGallery } from "./Components/IllustrationsGallery";
 import { SportPosters } from "./Components/SportPosters";
@@ -17,7 +17,7 @@ export const App = () => {
           element={
             <>
               <Hero />
-              <DesignProjects />
+              <PortfolioSection /> {/* ← REPLACES DesignProjects */}
             </>
           }
         />
@@ -43,3 +43,5 @@ export const App = () => {
     </Router>
   );
 };
+
+export default App;
