@@ -7,6 +7,7 @@ import { IllustrationsGallery } from "./Components/IllustrationsGallery";
 import { SportPosters } from "./Components/SportPosters";
 import { BrandIdentity } from "./Components/BrandIdentity";
 import { Rebrand } from "./Components/Rebrand";
+import { SkillsSection } from "./Components/SkillsSection";
 
 export const App = () => {
   return (
@@ -17,7 +18,8 @@ export const App = () => {
           element={
             <>
               <Hero />
-              <PortfolioSection /> {/* ← REPLACES DesignProjects */}
+              <SkillsSection />
+              <PortfolioSection />
             </>
           }
         />
