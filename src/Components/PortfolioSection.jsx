@@ -10,6 +10,12 @@ export const PortfolioSection = () => {
     <section className="min-h-screen bg-background">
       <div className="sticky top-0 z-40 bg-background/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
         <div className="max-w-6xl mx-auto px-6">
+          <div className="flex items-center justify-center mt-10">
+            <h1 className="flex text-8xl font-bold text-gray-700">
+              {" "}
+              My Portfolio
+            </h1>
+          </div>
           <div className="flex justify-center py-8">
             <div className="bg-gray-100 dark:bg-gray-800 rounded-2xl p-2 flex">
               <button
