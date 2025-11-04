@@ -8,6 +8,8 @@ import { SportPosters } from "./Components/SportPosters";
 import { BrandIdentity } from "./Components/BrandIdentity";
 import { Rebrand } from "./Components/Rebrand";
 import { SkillsSection } from "./Components/SkillsSection";
+import { Contact } from "lucide-react";
+import { ContactSection } from "./Components/ContactSection";
 
 export const App = () => {
   return (
@@ -20,6 +22,7 @@ export const App = () => {
               <Hero />
               <SkillsSection />
               <PortfolioSection />
+              <ContactSection />
             </>
           }
         />
