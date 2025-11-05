@@ -10,6 +10,7 @@ import { Rebrand } from "./Components/Rebrand";
 import { SkillsSection } from "./Components/SkillsSection";
 import { Contact } from "lucide-react";
 import { ContactSection } from "./Components/ContactSection";
+import { Footer } from "./Components/Footer";
 
 export const App = () => {
   return (
@@ -23,6 +24,7 @@ export const App = () => {
               <SkillsSection />
               <PortfolioSection />
               <ContactSection />
+              <Footer />
             </>
           }
         />
