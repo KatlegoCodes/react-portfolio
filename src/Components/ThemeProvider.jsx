@@ -23,5 +23,20 @@ export const ThemeProvider = ({ children }) => {
     setTheme(savedTheme || systemPreference);
   }, []);
 
-  return <div>ThemeProvider</div>;
+  useEffect(() => {
+    const root = window.document.documentElement;
+    root.classList.remove("light", "dark");
+    root.classList.add(theme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === "light" ? "dark" : "light"));
+  };
+
+  return (
+    <ThemeContext.Provider
+      value={{ theme, toggleTheme }}
+    ></ThemeContext.Provider>
+  );
 };
