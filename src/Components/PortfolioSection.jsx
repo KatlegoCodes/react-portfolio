@@ -7,7 +7,7 @@ export const PortfolioSection = () => {
   const [activeSection, setActiveSection] = React.useState("design");
 
   return (
-    <section className="min-h-screen bg-background">
+    <section id="projects" className="min-h-screen bg-background">
       <div className="sticky top-0 z-40 bg-background/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
         <div className="max-w-6xl mx-auto px-6">
           <div className="flex items-center justify-center mt-10">

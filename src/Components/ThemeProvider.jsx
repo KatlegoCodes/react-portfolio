@@ -1,0 +1,27 @@
+import React, { createContext, useContext, useEffect, useState } from "react";
+
+const ThemeContext = createContext();
+
+export const useTheme = () => {
+  const context = useContext(ThemeContext);
+  if (!context) {
+    throw new Error("useTheme must be used within a theme provider");
+  }
+  return context;
+};
+
+export const ThemeProvider = ({ children }) => {
+  const [theme, setTheme] = useState("light");
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+    const systemPreference = window.matchMedia("(prefers-color-scheme: dark)")
+      .matches
+      ? "dark"
+      : "light";
+
+    setTheme(savedTheme || systemPreference);
+  }, []);
+
+  return <div>ThemeProvider</div>;
+};
