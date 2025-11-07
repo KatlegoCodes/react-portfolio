@@ -97,7 +97,7 @@ export const SkillsSection = () => {
     "hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-current";
 
   return (
-    <section id="skills" className="py-20 bg-gray-50 dark:bg-gray-900">
+    <section id="skills" className="py-20 bg-white dark:bg-gray-900">
       <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
         <motion.div

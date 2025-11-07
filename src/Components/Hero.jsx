@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Github, Linkedin, Mail, Instagram } from "lucide-react";
+import { DarkModeToggle } from "./DarkModeToggle";
 
 export const Hero = () => {
   const scrollToProjects = () => {
@@ -11,6 +12,14 @@ export const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
+      <motion.div
+        className="absolute tp-6 right-6 z-20"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.5 }}
+      >
+        <DarkModeToggle />
+      </motion.div>
       {/* Background Image with Gradient Overlay */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"

@@ -1,17 +1,30 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Hero } from "./Components/Hero";
-import { PortfolioSection } from "./Components/PortfolioSection"; // ← NEW
+import { PortfolioSection } from "./Components/PortfolioSection";
 import { ProjectDetails } from "./Components/ProjectDetails";
 import { IllustrationsGallery } from "./Components/IllustrationsGallery";
 import { SportPosters } from "./Components/SportPosters";
 import { BrandIdentity } from "./Components/BrandIdentity";
 import { Rebrand } from "./Components/Rebrand";
 import { SkillsSection } from "./Components/SkillsSection";
-import { Contact } from "lucide-react";
 import { ContactSection } from "./Components/ContactSection";
 import { Footer } from "./Components/Footer";
 import { ThemeProvider } from "./Components/ThemeProvider";
+
+// DebugComponent.jsx - Add this temporarily to App.jsx
+const DebugTheme = () => {
+  const { theme } = useTheme();
+
+  return (
+    <div className="fixed bottom-4 left-4 z-50 p-4 bg-black text-white rounded-lg">
+      <div>Theme: {theme}</div>
+      <div className="text-sm opacity-75">
+        Active in: Hero, PortfolioSection
+      </div>
+    </div>
+  );
+};
 
 export const App = () => {
   return (
