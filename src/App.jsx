@@ -11,20 +11,7 @@ import { SkillsSection } from "./Components/SkillsSection";
 import { ContactSection } from "./Components/ContactSection";
 import { Footer } from "./Components/Footer";
 import { ThemeProvider } from "./Components/ThemeProvider";
-
-// DebugComponent.jsx - Add this temporarily to App.jsx
-const DebugTheme = () => {
-  const { theme } = useTheme();
-
-  return (
-    <div className="fixed bottom-4 left-4 z-50 p-4 bg-black text-white rounded-lg">
-      <div>Theme: {theme}</div>
-      <div className="text-sm opacity-75">
-        Active in: Hero, PortfolioSection
-      </div>
-    </div>
-  );
-};
+import { ThemeDebug } from "./Components/ThemeDebugg";
 
 export const App = () => {
   return (
