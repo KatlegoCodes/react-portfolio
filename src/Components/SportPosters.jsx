@@ -1,6 +1,8 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import background from "../assets/background.jpg";
+
+// Import all posters (keep your existing imports)
 import poster_1 from "../assets/Sport Posters/poster-1.jpg";
 import poster_2 from "../assets/Sport Posters/poster-2.jpg";
 import poster_3 from "../assets/Sport Posters/poster-3.jpg";
@@ -13,7 +15,7 @@ import poster_9 from "../assets/Sport Posters/poster-9.jpg";
 import poster_10 from "../assets/Sport Posters/poster-10.jpg";
 import poster_11 from "../assets/Sport Posters/poster-11.jpg";
 
-// Add a close icon component
+// Enhanced close icon
 const X = () => (
   <svg
     width="24"
@@ -25,6 +27,24 @@ const X = () => (
   >
     <line x1="18" y1="6" x2="6" y2="18"></line>
     <line x1="6" y1="6" x2="18" y2="18"></line>
+  </svg>
+);
+
+// Navigation arrow component
+const Arrow = ({ direction }) => (
+  <svg
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+  >
+    {direction === "left" ? (
+      <polyline points="15 18 9 12 15 6"></polyline>
+    ) : (
+      <polyline points="9 18 15 12 9 6"></polyline>
+    )}
   </svg>
 );
 
@@ -55,7 +75,7 @@ export const SportPosters = () => {
 
     if (selected) {
       document.addEventListener("keydown", handleEscape);
-      document.body.style.overflow = "hidden"; // Prevent background scrolling
+      document.body.style.overflow = "hidden";
     }
 
     return () => {
@@ -77,142 +97,221 @@ export const SportPosters = () => {
     setSelected(posters[prevIndex]);
   };
 
+  // Stagger animation for grid items
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 40, scale: 0.9 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 15,
+      },
+    },
+  };
+
   return (
-    <section
-      className="relative min-h-screen bg-background py-20 px-6"
-      style={{
-        backgroundImage: `url(${background})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundAttachment: "fixed",
-      }}
-    >
-      <div className="absolute inset-0 bg-black/30 backdrop-blur-[2px]" />
-      <div className="relative max-w-6xl mx-auto text-center text-white z-10">
-        {/* Header */}
+    <section className="relative min-h-screen bg-gradient-to-br from-slate-900 via-background to-slate-800 py-20 px-6 overflow-hidden">
+      {/* Animated background elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-1/4 -left-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 -right-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+      </div>
+
+      <div className="relative max-w-7xl mx-auto text-center text-foreground z-10">
+        {/* Enhanced Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="mb-16"
         >
-          <h1 className="text-5xl font-bold mb-4">Sport Posters</h1>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            A selection of my recent Sport Posters exploring emotion,
-            storytelling, and vibrant composition.
-          </p>
+          <motion.h1
+            className="text-6xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6 }}
+          >
+            Sport Posters
+          </motion.h1>
+          <motion.p
+            className="text-muted-foreground max-w-2xl mx-auto text-lg md:text-xl leading-relaxed"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+          >
+            Dynamic compositions capturing the intensity, emotion, and raw
+            energy of athletic excellence.
+          </motion.p>
         </motion.div>
 
-        {/* Gallery Grid */}
+        {/* Enhanced Gallery Grid */}
         <motion.div
-          layout
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
         >
           {posters.map((item, index) => (
             <motion.div
               key={item.id}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4 }}
-              className="relative group overflow-hidden rounded-2xl shadow-md hover:shadow-2xl  cursor-pointer"
-              whileHover={{ y: -8, scale: 1.03 }}
+              variants={itemVariants}
+              className="relative group overflow-hidden rounded-3xl cursor-pointer bg-card/50 backdrop-blur-sm border border-white/10 hover:border-white/20"
+              whileHover={{
+                y: -12,
+                scale: 1.02,
+                transition: { type: "spring", stiffness: 300, damping: 25 },
+              }}
               onClick={() => setSelected(item)}
             >
-              <img
-                src={item.src}
-                alt={item.title}
-                className="w-full h-[480px] object-cover transform group-hover:scale-110 transition-transform duration-700"
-              />
+              {/* Image Container */}
+              <div className="relative overflow-hidden">
+                <motion.img
+                  src={item.src}
+                  alt={item.title}
+                  className="w-full h-80 object-cover transform group-hover:scale-110 transition-transform duration-700"
+                  whileHover={{ scale: 1.1 }}
+                />
 
-              {/* Overlay Title */}
-              <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end">
-                <p className="text-white text-lg font-medium p-4">
-                  {item.title}
-                </p>
-              </div>
+                {/* Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end">
+                  <div className="p-6 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                    <h3 className="text-white text-xl font-bold mb-2">
+                      {item.title}
+                    </h3>
+                  </div>
+                </div>
 
-              {/* Click hint */}
-              <div className="absolute top-4 right-4 bg-black/60 rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="white"
-                  strokeWidth="2"
+                {/* Hover Indicator */}
+                <motion.div
+                  className="absolute top-4 right-4 bg-black/60 rounded-full p-3 opacity-0 group-hover:opacity-100 backdrop-blur-sm"
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
                 >
-                  <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
-                </svg>
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="white"
+                    strokeWidth="2"
+                  >
+                    <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                  </svg>
+                </motion.div>
               </div>
             </motion.div>
           ))}
         </motion.div>
       </div>
 
-      {/* Enhanced Modal / Lightbox - CLEANED UP */}
+      {/* Enhanced Modal / Lightbox */}
       <AnimatePresence>
         {selected && (
           <motion.div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-md p-4"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-lg p-4"
             onClick={() => setSelected(null)}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
             <motion.div
-              className="relative w-full h-full flex items-center justify-center"
+              className="relative w-full h-full flex items-center justify-center max-w-7xl mx-auto"
               onClick={(e) => e.stopPropagation()}
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.8, opacity: 0 }}
-              transition={{ type: "spring", damping: 25, stiffness: 200 }}
+              initial={{ scale: 0.8, opacity: 0, rotateY: 10 }}
+              animate={{ scale: 1, opacity: 1, rotateY: 0 }}
+              exit={{ scale: 0.8, opacity: 0, rotateY: -10 }}
+              transition={{ type: "spring", damping: 30, stiffness: 200 }}
             >
-              {/* Enlarged Image - Clean focus on the image */}
-              <motion.img
-                src={selected.src}
-                alt={selected.title}
-                className="max-w-[95vw] max-h-[95vh] w-auto h-auto object-contain"
-                initial={{ scale: 1.1 }}
-                animate={{ scale: 1 }}
-                transition={{ delay: 0.2, duration: 0.5 }}
-              />
+              {/* Main Image Container */}
+              <motion.div
+                className="relative"
+                initial={{ y: 50 }}
+                animate={{ y: 0 }}
+                transition={{ delay: 0.2 }}
+              >
+                <motion.img
+                  src={selected.src}
+                  alt={selected.title}
+                  className="max-w-[95vw] h-[95vh]  object-contain shadow-2xl"
+                  initial={{ scale: 1.1 }}
+                  animate={{ scale: 1 }}
+                  transition={{ duration: 0.6 }}
+                />
 
-              {/* Close Button */}
-              <button
+                {/* Page Counter Only */}
+                <motion.div
+                  className="absolute bottom-6 right-6 bg-black/60 backdrop-blur-md rounded-2xl px-4 py-2 text-white transform translate-y-4 opacity-0"
+                  animate={{ translateY: 0, opacity: 1 }}
+                  transition={{ delay: 0.4 }}
+                >
+                  <span className="text-white/70 text-sm">
+                    {posters.findIndex((item) => item.id === selected.id) + 1}{" "}
+                    of {posters.length}
+                  </span>
+                </motion.div>
+              </motion.div>
+
+              {/* Enhanced Close Button */}
+              <motion.button
                 onClick={() => setSelected(null)}
-                className="absolute top-6 right-6 text-white text-3xl font-bold hover:text-gray-300 bg-black/70 rounded-full w-12 h-12 flex items-center justify-center backdrop-blur-sm transition-all duration-300 hover:bg-black/90 hover:scale-110"
+                className="absolute top-6 right-6 text-white hover:text-white bg-black/70 rounded-2xl w-14 h-14 flex items-center justify-center backdrop-blur-sm transition-all duration-300 hover:bg-red-500/90 hover:scale-110 border border-white/10"
+                whileHover={{ scale: 1.1, rotate: 90 }}
+                whileTap={{ scale: 0.9 }}
               >
                 <X />
-              </button>
+              </motion.button>
 
-              {/* Navigation Arrows */}
+              {/* Enhanced Navigation Arrows */}
               {posters.length > 1 && (
                 <>
-                  <button
+                  <motion.button
                     onClick={(e) => {
                       e.stopPropagation();
                       goToPrev();
                     }}
-                    className="absolute left-6 top-1/2 transform -translate-y-1/2 text-white bg-black/70 rounded-full w-12 h-12 flex items-center justify-center backdrop-blur-sm hover:bg-black/90 transition-all duration-300 hover:scale-110 text-2xl"
+                    className="absolute left-6 top-1/2 transform -translate-y-1/2 text-white bg-black/70 rounded-2xl w-14 h-14 flex items-center justify-center backdrop-blur-sm hover:bg-white/20 transition-all duration-300 border border-white/10"
+                    whileHover={{ scale: 1.1, x: -5 }}
+                    whileTap={{ scale: 0.9 }}
                   >
-                    ‹
-                  </button>
-                  <button
+                    <Arrow direction="left" />
+                  </motion.button>
+                  <motion.button
                     onClick={(e) => {
                       e.stopPropagation();
                       goToNext();
                     }}
-                    className="absolute right-6 top-1/2 transform -translate-y-1/2 text-white bg-black/70 rounded-full w-12 h-12 flex items-center justify-center backdrop-blur-sm hover:bg-black/90 transition-all duration-300 hover:scale-110 text-2xl"
+                    className="absolute right-6 top-1/2 transform -translate-y-1/2 text-white bg-black/70 rounded-2xl w-14 h-14 flex items-center justify-center backdrop-blur-sm hover:bg-white/20 transition-all duration-300 border border-white/10"
+                    whileHover={{ scale: 1.1, x: 5 }}
+                    whileTap={{ scale: 0.9 }}
                   >
-                    ›
-                  </button>
+                    <Arrow direction="right" />
+                  </motion.button>
                 </>
               )}
 
-              {/* Instructions */}
-              <div className="absolute top-6 left-6 text-white/80 text-sm bg-black/50 rounded-lg px-3 py-1 backdrop-blur-sm">
-                Press ESC to close
-              </div>
+              {/* Enhanced Instructions */}
+              <motion.div
+                className="absolute top-6 left-6 text-white/60 text-sm bg-black/50 rounded-xl px-4 py-2 backdrop-blur-sm border border-white/10"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.6 }}
+              >
+                Press ESC to close • Use arrows to navigate
+              </motion.div>
             </motion.div>
           </motion.div>
         )}
