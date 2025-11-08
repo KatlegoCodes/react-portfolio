@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Github, Linkedin, Mail, Instagram } from "lucide-react";
 import { DarkModeToggle } from "./DarkModeToggle";
+import Prism from "../Components/Prism";
 
 export const Hero = () => {
   const scrollToProjects = () => {
@@ -21,10 +22,7 @@ export const Hero = () => {
         <DarkModeToggle />
       </motion.div>
       {/* Background Image with Gradient Overlay */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url("src/assets/background.jpg")` }}
-      />
+
       <div className="absolute inset-0 bg-linear-to-b from-background/80 via-background/60 to-background/80" />
 
       {/* Content */}

@@ -53,7 +53,7 @@ export const IllustrationsGallery = () => {
 
     if (selected) {
       document.addEventListener("keydown", handleEscape);
-      document.body.style.overflow = "hidden"; // Prevent background scrolling
+      document.body.style.overflow = "hidden";
     }
 
     return () => {
@@ -81,16 +81,9 @@ export const IllustrationsGallery = () => {
   };
 
   return (
-    <section
-      className="min-h-screen bg-background py-20 px-6"
-      style={{
-        backgroundImage: `url("${background}")`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
-      <div className="absolute inset-0 bg-black/30 max-h-full backdrop-blur-[2px]" />
-      <div className="relative max-w-6xl mx-auto text-center text-white z-10">
+    <section className="min-h-screen bg-background py-20 px-6">
+      <div className="absolute inset-0 max-h-full backdrop-blur-[2px]" />
+      <div className="relative max-w-6xl mx-auto text-center text-foreground z-10">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -116,7 +109,7 @@ export const IllustrationsGallery = () => {
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1, duration: 0.6 }}
-              className="relative group overflow-hidden rounded-2xl shadow-md hover:shadow-2xl  cursor-pointer"
+              className="relative group overflow-hidden rounded-2xl shadow-lg hover:shadow-xl cursor-pointer bg-card"
               whileHover={{ scale: 1.05 }}
               onClick={() => setSelected(item)}
             >
@@ -126,8 +119,8 @@ export const IllustrationsGallery = () => {
                 className="w-full h-[480px] object-cover transform group-hover:scale-110 transition-transform duration-700"
               />
 
-              {/* Overlay Title */}
-              <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end">
+              {/* Overlay Title - FIXED GRADIENT TYPO */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end">
                 <p className="text-white text-lg font-medium p-4">
                   {item.title}
                 </p>
@@ -151,7 +144,7 @@ export const IllustrationsGallery = () => {
         </motion.div>
       </div>
 
-      {/* Enhanced Modal / Lightbox - UPDATED TO MATCH SPORT POSTERS */}
+      {/* Enhanced Modal / Lightbox */}
       <AnimatePresence>
         {selected && (
           <motion.div
@@ -169,7 +162,7 @@ export const IllustrationsGallery = () => {
               exit={{ scale: 0.8, opacity: 0 }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
             >
-              {/* Enlarged Image - Now much larger like Sport Posters */}
+              {/* Enlarged Image */}
               <motion.img
                 src={selected.src}
                 alt={selected.title}
@@ -182,7 +175,7 @@ export const IllustrationsGallery = () => {
               {/* Close Button */}
               <button
                 onClick={() => setSelected(null)}
-                className="absolute top-6 right-6 text-white text-3xl font-bold hover:text-gray-300 bg-black/70 rounded-full w-12 h-12 flex items-center justify-center backdrop-blur-sm transition-all duration-300 hover:bg-black/90 hover:scale-110"
+                className="absolute top-6 right-6 text-white hover:text-muted-foreground bg-black/70 rounded-full w-12 h-12 flex items-center justify-center backdrop-blur-sm transition-all duration-300 hover:bg-black/90 hover:scale-110"
               >
                 <X />
               </button>
@@ -212,7 +205,7 @@ export const IllustrationsGallery = () => {
               )}
 
               {/* Instructions */}
-              <div className="absolute top-6 left-6 text-white/80 text-sm bg-black/50 rounded-lg px-3 py-1 backdrop-blur-sm">
+              <div className="absolute top-6 left-6 text-muted-foreground text-sm bg-black/50 rounded-lg px-3 py-1 backdrop-blur-sm">
                 Press ESC to close
               </div>
             </motion.div>
