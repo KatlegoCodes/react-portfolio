@@ -60,41 +60,34 @@ export const SkillsSection = () => {
   ];
 
   const toolHoverStyles = {
-    JavaScript:
-      "hover:bg-yellow-300 hover:text-black dark:hover:bg-yellow-400 dark:hover:text-black",
+    JavaScript: "hover:bg-yellow-300 hover:text-black",
     Python:
-      "hover:bg-gradient-to-r hover:from-yellow-300 hover:to-emerald-300 hover:text-black dark:hover:from-yellow-400 dark:hover:to-emerald-400",
+      "hover:bg-gradient-to-r hover:from-yellow-300 hover:to-emerald-300 hover:text-black",
     React:
-      "hover:bg-gradient-to-r hover:from-sky-400 hover:to-indigo-400 hover:text-white dark:hover:from-sky-500 dark:hover:to-indigo-500",
+      "hover:bg-gradient-to-r hover:from-sky-400 hover:to-indigo-400 hover:text-white",
     "Tailwind CSS":
-      "hover:bg-gradient-to-r hover:from-cyan-300 hover:to-sky-400 hover:text-white dark:hover:from-cyan-400 dark:hover:to-sky-500",
-    TypeScript: "hover:bg-blue-400 hover:text-white dark:hover:bg-blue-500",
+      "hover:bg-gradient-to-r hover:from-cyan-300 hover:to-sky-400 hover:text-white",
+    TypeScript: "hover:bg-blue-400 hover:text-white",
     Figma:
-      "hover:bg-gradient-to-r hover:from-pink-300 hover:to-violet-300 hover:text-white dark:hover:from-pink-400 dark:hover:to-violet-400",
+      "hover:bg-gradient-to-r hover:from-pink-300 hover:to-violet-300 hover:text-white",
     "Adobe Illustrator":
-      "hover:bg-gradient-to-r hover:from-[#D5353B] hover:to-[#D7C142] hover:text-yellow-200 dark:hover:from-[#FF9AA2] dark:hover:to-[#FFF9C4]",
+      "hover:bg-gradient-to-r hover:from-[#D5353B] hover:to-[#D7C142] hover:text-yellow-200",
     "Adobe Photoshop":
-      "hover:bg-gradient-to-r hover:from-sky-300 hover:to-blue-900 hover:text-blue-200 dark:hover:from-sky-400 dark:hover:to-blue-800",
-    Django: "hover:bg-green-300 hover:text-white dark:hover:bg-green-400",
-    GitHub: "hover:bg-gray-600 hover:text-white dark:hover:bg-gray-700",
-    Git: "hover:bg-gray-500 hover:text-white dark:hover:bg-gray-600",
-    HTML5: "hover:bg-red-300 hover:text-white dark:hover:bg-red-400",
-    CSS3: "hover:bg-blue-300 hover:text-white dark:hover:bg-blue-400",
-    "Framer Motion":
-      "hover:bg-purple-300 hover:text-white dark:hover:bg-purple-400",
-    Vite: "hover:bg-teal-300 hover:text-white dark:hover:bg-teal-400",
-    "Adobe InDesign":
-      "hover:bg-fuchsia-300 hover:text-white dark:hover:bg-fuchsia-400",
+      "hover:bg-gradient-to-r hover:from-sky-300 hover:to-blue-900 hover:text-blue-200",
+    Django: "hover:bg-green-300 hover:text-white",
+    GitHub: "hover:bg-gray-600 hover:text-white",
+    Git: "hover:bg-gray-500 hover:text-white",
+    HTML5: "hover:bg-red-300 hover:text-white",
+    CSS3: "hover:bg-blue-300 hover:text-white",
+    "Framer Motion": "hover:bg-purple-300 hover:text-white",
+    Vite: "hover:bg-teal-300 hover:text-white",
+    "Adobe InDesign": "hover:bg-fuchsia-300 hover:text-white",
   };
 
-  const defaultHover =
-    "hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-current";
+  const defaultHover = "hover:bg-accent hover:text-accent-foreground";
 
   return (
-    <section
-      id="skills"
-      className="py-20 dark:bg-gray-900 transition-colors duration-300"
-    >
+    <section id="skills" className="py-20 bg-background">
       <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
         <motion.div
@@ -104,10 +97,10 @@ export const SkillsSection = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-4 transition-colors duration-300">
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             Skills & Technologies
           </h2>
-          <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto transition-colors duration-300">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
             A refined mix of design and development tools I use to craft
             prototypes, experiences, and deployable products.
           </p>
@@ -118,7 +111,7 @@ export const SkillsSection = () => {
           {Object.entries(skills).map(([key, category]) => (
             <motion.div
               key={key}
-              className="flex flex-col h-full bg-white dark:bg--background rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 p-8 hover:shadow-xl transition-all duration-300 group"
+              className="flex flex-col h-full bg-card border border-border rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 group"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -131,13 +124,13 @@ export const SkillsSection = () => {
                     className={`absolute inset-0 rounded-xl blur-md opacity-20 group-hover:opacity-50 transition bg-gradient-to-r ${category.linear}`}
                     style={{ filter: "blur(10px)" }}
                   />
-                  <div className="relative p-3 bg-gray-900 dark:bg-gray-700 rounded-xl text-white transition-colors duration-300">
+                  <div className="relative p-3 bg-primary rounded-xl text-primary-foreground">
                     {category.icon}
                   </div>
                 </div>
 
                 <div>
-                  <h3 className="text-xl md:text-2xl font-semibold text-gray-800 dark:text-white transition-colors duration-300">
+                  <h3 className="text-xl md:text-2xl font-semibold text-card-foreground">
                     {category.title}
                   </h3>
                 </div>
@@ -148,15 +141,15 @@ export const SkillsSection = () => {
                 {category.technologies.map((skill, index) => (
                   <div key={skill.name} className="group">
                     <div className="flex justify-between items-center mb-2">
-                      <span className="text-gray-700 dark:text-gray-200 font-medium transition-colors duration-300">
+                      <span className="text-card-foreground font-medium">
                         {skill.name}
                       </span>
-                      <span className="text-sm font-semibold text-gray-500 dark:text-gray-400 transition-colors duration-300">
+                      <span className="text-sm font-semibold text-muted-foreground">
                         {skill.level}%
                       </span>
                     </div>
 
-                    <div className="relative w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3 overflow-hidden shadow-inner transition-colors duration-300">
+                    <div className="relative w-full bg-muted rounded-full h-3 overflow-hidden shadow-inner">
                       <motion.div
                         className={`h-full rounded-full relative overflow-hidden bg-gradient-to-r ${category.linear}`}
                         initial={{ width: 0 }}
@@ -179,7 +172,7 @@ export const SkillsSection = () => {
                         />
                       </motion.div>
 
-                      <span className="absolute -top-6 right-0 text-sm font-semibold text-gray-600 dark:text-gray-300 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                      <span className="absolute -top-6 right-0 text-sm font-semibold text-muted-foreground opacity-0 group-hover:opacity-100 transition-all duration-300">
                         {skill.level}%
                       </span>
                     </div>
@@ -189,7 +182,7 @@ export const SkillsSection = () => {
 
               {/* Footer */}
               <div className="mt-6">
-                <p className="text-sm text-gray-500 dark:text-gray-400 transition-colors duration-300">
+                <p className="text-sm text-muted-foreground">
                   Always learning — I prioritize clarity, maintainability and
                   polished UX.
                 </p>
@@ -206,7 +199,7 @@ export const SkillsSection = () => {
           transition={{ duration: 0.6, delay: 0.15 }}
           viewport={{ once: true }}
         >
-          <h3 className="text-2xl font-semibold text-gray-800 dark:text-white text-center mb-6 transition-colors duration-300">
+          <h3 className="text-2xl font-semibold text-foreground text-center mb-6">
             Tools & Technologies
           </h3>
 
@@ -222,7 +215,7 @@ export const SkillsSection = () => {
                   whileHover={{ scale: 1.06, y: -3 }}
                   transition={{ duration: 0.18, delay: idx * 0.03 }}
                   viewport={{ once: true }}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 shadow-sm transition-all duration-200 ${hoverClass}`}
+                  className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-card border border-border text-card-foreground shadow-sm transition-all duration-200 ${hoverClass}`}
                   onMouseDown={(e) => e.preventDefault()}
                 >
                   <span>{tool}</span>
@@ -240,14 +233,13 @@ export const SkillsSection = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           viewport={{ once: true }}
         >
-          <p className="text-lg text-gray-600 dark:text-gray-300 mb-4 transition-colors duration-300">
+          <p className="text-lg text-muted-foreground mb-4">
             Interested in working together?
           </p>
           <a
             href="#contact"
-            className="relative inline-flex items-center px-8 py-3 font-semibold text-white rounded-xl bg-gradient-to-r from-indigo-500 to-purple-500 overflow-hidden group transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+            className="btn-hero inline-flex items-center px-8 py-3 font-semibold rounded-xl overflow-hidden group transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
           >
-            <span className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-purple-600 opacity-0 group-hover:opacity-100 transition duration-500 blur-lg" />
             <span className="relative">Let's Build Something Amazing</span>
           </a>
         </motion.div>
