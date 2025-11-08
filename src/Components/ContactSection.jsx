@@ -30,7 +30,7 @@ export const ContactSection = () => {
     event.preventDefault();
   };
   return (
-    <section id="contact" className="py-20 bg-white dark:bg-gray-900">
+    <section id="contact" className="py-20  dark:bg-gray-900">
       <div className="max-w-6xl mx-auto px-6">
         <motion.div
           className="text-center mb-16"
