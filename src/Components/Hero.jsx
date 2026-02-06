@@ -14,7 +14,7 @@ export const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
       <motion.div
-        className="absolute tp-6 right-6 z-20"
+        className="absolute top-2 right-2 z-20"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.5 }}
@@ -34,12 +34,17 @@ export const Hero = () => {
           transition={{ duration: 0.8 }}
         >
           {/* Name */}
+
+          <motion.h3
+            className="text-5xl md:text-7xl lg:text-6xl font-bold leading-tight"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            Hi, I'm
+          </motion.h3>
           <motion.h1
-            className="text-5xl md:text-7xl lg:text-8xl font-bold bg-clip-text text-transparent leading-tight"
-            style={{
-              backgroundImage:
-                "linear-gradient(to right, hsl(var(--primary)), hsl(var(--accent)))",
-            }}
+            className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight dark:text-gray-400"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -67,7 +72,7 @@ export const Hero = () => {
 
           {/* Description */}
           <motion.p
-            className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed"
+            className=" text-md sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.9 }}

@@ -14,8 +14,8 @@ export const frontendProjects = [
     image: image_1,
     category: "Frontend",
     technologies: ["React", "Tailwind"],
-    liveUrl: "https://ecommerce-platform.example.com",
-    githubUrl: "https://github.com/katlegoCodes/ecommerce-platform",
+    liveUrl: "https://unshackled-warrior.vercel.app",
+    githubUrl: "https://github.com/katlegoCodes/unshackled-warrior",
     featured: true,
   },
   {
@@ -57,12 +57,12 @@ export const frontendProjects = [
 ];
 
 export const FrontendProjects = () => {
-  const [selectedProject, setSelectedProject] = React.useState(null); // Fixed casing
+  const [selectedProject, setSelectedProject] = React.useState(null);
 
   return (
     <section className="py-20 bg-background text-center">
       <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-7xl font-bold mb-12 text-gray-700">
+        <h2 className="text-5xl md:text-7xl font-bold mb-12 text-gray-700 mx-auto">
           Frontend Development
         </h2>
         <p className="text-lg md:text-2xl max-w-3xl mx-auto mb-16 text-muted-foreground">
@@ -107,7 +107,6 @@ export const FrontendProjects = () => {
                     {project.description}
                   </p>
 
-                  {/* Technologies - Fixed: added flex-wrap and gap */}
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.technologies.map((tech) => {
                       return (
@@ -121,23 +120,22 @@ export const FrontendProjects = () => {
                     })}
                   </div>
 
-                  {/* Action Buttons - Fixed: proper spacing and event handling */}
                   <div className="flex space-x-3">
                     <a
                       href={project.liveUrl}
                       target="_blank"
-                      rel="noopener noreferrer" // Fixed typo
-                      className="flex items-center justify-center flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg transition-colors text-sm font-medium"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center flex-1 bg-blue-600 hover:bg-blue-700 text-white py-1 px-2 md:py-2 md:px-4 rounded-md md:rounded-lg transition-colors text-sm font-medium"
                       onClick={(event) => event.stopPropagation()}
                     >
                       <ExternalLink size={16} className="mr-2" />
                       Live Demo
                     </a>
                     <a
-                      href={project.githubUrl} // Fixed: was using SelectedProject instead of project
+                      href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-center flex-1 bg-gray-800 hover:bg-gray-900 text-white py-2 px-4 rounded-lg transition-colors text-sm font-medium"
+                      className="flex items-center justify-center flex-1 bg-gray-800 hover:bg-gray-900 text-white py-1 px-2 md:py-2 md:px-4 rounded-md md:rounded-lg transition-colors text-xs md:text-sm font-medium"
                       onClick={(event) => event.stopPropagation()}
                     >
                       <Github size={16} className="mr-2" />
@@ -150,7 +148,6 @@ export const FrontendProjects = () => {
           })}
         </div>
 
-        {/* Project Detail Modal - Fixed variable name */}
         {selectedProject && (
           <div
             className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-6"

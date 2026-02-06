@@ -11,7 +11,6 @@ import { SkillsSection } from "./Components/SkillsSection";
 import { ContactSection } from "./Components/ContactSection";
 import { Footer } from "./Components/Footer";
 import { ThemeProvider } from "./Components/ThemeProvider";
-import { ThemeDebug } from "./Components/ThemeDebugg";
 
 export const App = () => {
   return (

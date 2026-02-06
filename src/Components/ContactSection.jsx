@@ -61,7 +61,7 @@ export const ContactSection = () => {
               <h3 className="text-2xl font-bold text-foreground mb-6">
                 Let's Start a Conversation
               </h3>
-              <p className="text-muted-foreground text-lg leading-relaxed">
+              <p className="text-muted-foreground text-lg leading-relaxed text-center mb-20">
                 Whether you have a project in mind, need design consultation, or
                 just want to say hello, I'd love to hear from you. I'm always
                 open to discussing new opportunities and creative partnerships.
@@ -82,7 +82,7 @@ export const ContactSection = () => {
                   <p className="text-sm text-muted-foreground">Email</p>
                   <a
                     href="mailto:katlegcodes@gmail.com"
-                    className="text-lg text-foreground hover:text-primary transition-colors duration-300"
+                    className="text-md md:text-lg text-foreground hover:text-primary transition-colors duration-300"
                   >
                     katlegcodes@gmail.com
                   </a>
@@ -98,10 +98,10 @@ export const ContactSection = () => {
                   <Phone className="w-6 h-6 text-muted-foreground" />
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground">Phone</p>
+                  <p className="text-xs text-muted-foreground">Phone</p>
                   <a
                     href="tel:+27620062323"
-                    className="text-lg text-foreground hover:text-primary transition-colors duration-300"
+                    className="text-md md:text-lg text-foreground hover:text-primary transition-colors duration-300"
                   >
                     +27 620 062 323
                   </a>
@@ -117,8 +117,10 @@ export const ContactSection = () => {
                   <MapPin className="w-6 h-6 text-muted-foreground" />
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground">Location</p>
-                  <p className="text-lg text-foreground">
+                  <p className="text-xs md:text-sm text-muted-foreground">
+                    Location
+                  </p>
+                  <p className="text-md md:text-lg text-foreground">
                     Johannesburg, South Africa
                   </p>
                 </div>
@@ -188,7 +190,7 @@ export const ContactSection = () => {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-border rounded-xl bg-card text-foreground placeholder-muted-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
+                    className="w-full px-4 py-3 border border-border rounded-md md:rounded-xl bg-card text-foreground placeholder-muted-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
                     placeholder="Katlego Mashigwana"
                   />
                 </div>
@@ -206,7 +208,7 @@ export const ContactSection = () => {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-border rounded-xl bg-card text-foreground placeholder-muted-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
+                    className="w-full px-4 py-3 border border-border rounded-md md:rounded-xl bg-card text-foreground placeholder-muted-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
                     placeholder="katlego@gmail.com"
                   />
                 </div>
@@ -226,7 +228,7 @@ export const ContactSection = () => {
                   required
                   value={formData.subject}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-border rounded-xl bg-card text-foreground placeholder-muted-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
+                  className="w-full px-4 py-3 border border-border rounded-md md:rounded-xl bg-card text-foreground placeholder-muted-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
                   placeholder="Project Inquiry"
                 />
               </div>
@@ -252,7 +254,7 @@ export const ContactSection = () => {
 
               <motion.button
                 type="submit"
-                className="w-full bg-gray-800 hover:bg-gray-700 dark:bg-muted-foreground text-primary-foreground font-semibold py-4 px-8 rounded-xl transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center space-x-2"
+                className="w-full bg-gray-800 hover:bg-gray-700 dark:bg-muted-foreground text-primary-foreground font-semibold py-4 px-8 rounded-sm md:rounded-xl transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center space-x-2"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >

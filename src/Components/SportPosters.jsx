@@ -123,7 +123,7 @@ export const SportPosters = () => {
   };
 
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-slate-900 via-background to-slate-800 py-20 px-6 overflow-hidden">
+    <section className="relative min-h-screen bg-linear-to-br from-slate-900 via-background to-slate-800 py-20 px-6 overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 -left-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
@@ -139,7 +139,7 @@ export const SportPosters = () => {
           className="mb-16"
         >
           <motion.h1
-            className="text-6xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent"
+            className="text-6xl md:text-7xl font-bold mb-6 bg-linear-to-r from-white to-gray-300 bg-clip-text text-transparent"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
@@ -186,8 +186,8 @@ export const SportPosters = () => {
                   whileHover={{ scale: 1.1 }}
                 />
 
-                {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end">
+                {/* linear Overlay */}
+                <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end">
                   <div className="p-6 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
                     <h3 className="text-white text-xl font-bold mb-2">
                       {item.title}
@@ -283,7 +283,7 @@ export const SportPosters = () => {
                       e.stopPropagation();
                       goToPrev();
                     }}
-                    className="absolute left-6 top-1/2 transform -translate-y-1/2 text-white bg-black/70 rounded-2xl w-14 h-14 flex items-center justify-center backdrop-blur-sm hover:bg-white/20 transition-all duration-300 border border-white/10"
+                    className="absolute left-6 top-1/2 transform -translate-y-1/2 text-white bg-black/70 rounded-2xl w-7 h-7 md:w-14 md:h-14 flex items-center justify-center backdrop-blur-sm hover:bg-white/20 transition-all duration-300 border border-white/10"
                     whileHover={{ scale: 1.1, x: -5 }}
                     whileTap={{ scale: 0.9 }}
                   >
@@ -294,7 +294,7 @@ export const SportPosters = () => {
                       e.stopPropagation();
                       goToNext();
                     }}
-                    className="absolute right-6 top-1/2 transform -translate-y-1/2 text-white bg-black/70 rounded-2xl w-14 h-14 flex items-center justify-center backdrop-blur-sm hover:bg-white/20 transition-all duration-300 border border-white/10"
+                    className="absolute right-6 top-1/2 transform -translate-y-1/2 text-white bg-black/70 rounded-2xl w-7 h-7 md:w-14 md:h-14 flex items-center justify-center backdrop-blur-sm hover:bg-white/20 transition-all duration-300 border border-white/10"
                     whileHover={{ scale: 1.1, x: 5 }}
                     whileTap={{ scale: 0.9 }}
                   >

@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Heart, ArrowUp } from "lucide-react";
+import { ArrowUp } from "lucide-react";
 
 export const Footer = () => {
   const ScrollToTop = () => {
@@ -65,7 +65,7 @@ export const Footer = () => {
                 "Frontend Development",
                 "UI/UX Design",
                 "Web Identity",
-                "Web Aoolications",
+                "Web Applications",
               ].map((service) => {
                 return (
                   <li key={service}>
@@ -89,9 +89,9 @@ export const Footer = () => {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <span>&copy; {currentYear} Katlego Mashigwana. Made with</span>
-              <Heart className="w-4 h-4 text-red-500 space-x-2 fill-current" />
-              <span>In Johannesburg</span>
+              <span className="text-sm md:text-xl">
+                &copy; {currentYear} Katlego Mashigwana
+              </span>
             </motion.div>
 
             {/* Back to top */}

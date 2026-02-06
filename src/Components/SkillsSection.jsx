@@ -62,18 +62,18 @@ export const SkillsSection = () => {
   const toolHoverStyles = {
     JavaScript: "hover:bg-yellow-300 hover:text-black",
     Python:
-      "hover:bg-gradient-to-r hover:from-yellow-300 hover:to-emerald-300 hover:text-black",
+      "hover:bg-linear-to-r hover:from-yellow-300 hover:to-emerald-300 hover:text-black",
     React:
-      "hover:bg-gradient-to-r hover:from-sky-400 hover:to-indigo-400 hover:text-white",
+      "hover:bg-linear-to-r hover:from-sky-400 hover:to-indigo-400 hover:text-white",
     "Tailwind CSS":
-      "hover:bg-gradient-to-r hover:from-cyan-300 hover:to-sky-400 hover:text-white",
+      "hover:bg-linear-to-r hover:from-cyan-300 hover:to-sky-400 hover:text-white",
     TypeScript: "hover:bg-blue-400 hover:text-white",
     Figma:
-      "hover:bg-gradient-to-r hover:from-pink-300 hover:to-violet-300 hover:text-white",
+      "hover:bg-linear-to-r hover:from-pink-300 hover:to-violet-300 hover:text-white",
     "Adobe Illustrator":
-      "hover:bg-gradient-to-r hover:from-[#D5353B] hover:to-[#D7C142] hover:text-yellow-200",
+      "hover:bg-linear-to-r hover:from-[#D5353B] hover:to-[#D7C142] hover:text-yellow-200",
     "Adobe Photoshop":
-      "hover:bg-gradient-to-r hover:from-sky-300 hover:to-blue-900 hover:text-blue-200",
+      "hover:bg-linear-to-r hover:from-sky-300 hover:to-blue-900 hover:text-blue-200",
     Django: "hover:bg-green-300 hover:text-white",
     GitHub: "hover:bg-gray-600 hover:text-white",
     Git: "hover:bg-gray-500 hover:text-white",
@@ -121,10 +121,10 @@ export const SkillsSection = () => {
               <div className="flex items-center mb-6">
                 <div className="relative mr-4">
                   <div
-                    className={`absolute inset-0 rounded-xl blur-md opacity-20 group-hover:opacity-50 transition bg-gradient-to-r ${category.linear}`}
+                    className={`absolute inset-0 rounded-xl blur-md opacity-20 group-hover:opacity-50 transition bg-linear-to-r ${category.linear}`}
                     style={{ filter: "blur(10px)" }}
                   />
-                  <div className="relative p-3 bg-primary rounded-xl text-primary-foreground">
+                  <div className="relative p-3 bg-gray-800 dark: rounded-xl text-primary-foreground">
                     {category.icon}
                   </div>
                 </div>
@@ -151,7 +151,7 @@ export const SkillsSection = () => {
 
                     <div className="relative w-full bg-muted rounded-full h-3 overflow-hidden shadow-inner">
                       <motion.div
-                        className={`h-full rounded-full relative overflow-hidden bg-gradient-to-r ${category.linear}`}
+                        className={`h-full rounded-full relative overflow-hidden bg-linear-to-r ${category.linear}`}
                         initial={{ width: 0 }}
                         whileInView={{ width: `${skill.level}%` }}
                         transition={{
@@ -162,7 +162,7 @@ export const SkillsSection = () => {
                         viewport={{ once: true }}
                       >
                         <motion.div
-                          className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+                          className="absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent"
                           animate={{ x: ["-100%", "100%"] }}
                           transition={{
                             duration: 2.2,

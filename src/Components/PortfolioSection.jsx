@@ -9,16 +9,16 @@ export const PortfolioSection = () => {
   return (
     <section id="projects" className="min-h-screen bg-background py-24">
       {/* Header */}
-      <div className="max-w-6xl mx-auto px-6 text-center mb-12">
-        <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-8">
+      <div className="max-w-6xl mx-auto px-6 text-center mb-2 md:mb-12">
+        <h1 className="text-5xl md:text-7xl text-center font-bold text-foreground mb-8">
           My Portfolio
         </h1>
 
         {/* Toggle buttons */}
-        <div className="inline-flex bg-muted rounded-2xl p-2">
+        <div className="bg-muted rounded-2xl p-2 text-center">
           <button
             onClick={() => setActiveSection("design")}
-            className={`flex items-center gap-2 px-8 py-4 rounded-xl transition-all duration-300 font-semibold text-lg ${
+            className={`flex items-center gap-2 px-4 py-4 rounded-xl transition-all duration-300 font-semibold text-lg ${
               activeSection === "design"
                 ? "bg-card text-card-foreground shadow-lg"
                 : "text-muted-foreground hover:text-foreground"
@@ -30,7 +30,7 @@ export const PortfolioSection = () => {
 
           <button
             onClick={() => setActiveSection("frontend")}
-            className={`flex items-center gap-2 px-8 py-4 rounded-xl transition-all duration-300 font-semibold text-lg ${
+            className={`flex items-center gap-2 px-4 py-4 rounded-xl transition-all duration-300 font-semibold text-lg ${
               activeSection === "frontend"
                 ? "bg-card text-card-foreground shadow-lg"
                 : "text-muted-foreground hover:text-foreground"
