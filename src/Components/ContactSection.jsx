@@ -11,6 +11,8 @@ import {
 } from "lucide-react";
 
 export const ContactSection = () => {
+  const [loading, setLoading] = React.useState(false);
+  const [result, setResult] = React.useState("");
   const [formData, setFormData] = React.useState({
     name: "",
     email: "",
@@ -25,8 +27,39 @@ export const ContactSection = () => {
     });
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
+    setLoading(true);
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        access_key: "8d8ff863-d949-439f-9fbb-9327a35fe79e",
+        name: formData.name,
+        email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+      }),
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setResult("Message sent successfully!");
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+    } else {
+      setResult("Something went wrong. Please try again.");
+    }
+    setLoading(false);
   };
 
   return (
@@ -254,12 +287,22 @@ export const ContactSection = () => {
 
               <motion.button
                 type="submit"
-                className="w-full bg-gray-800 hover:bg-gray-700 dark:bg-muted-foreground text-primary-foreground font-semibold py-4 px-8 rounded-sm md:rounded-xl transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center space-x-2"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+                disabled={loading}
+                className="w-full bg-gray-800 hover:bg-gray-700 dark:bg-muted-foreground text-primary-foreground font-semibold py-4 px-8 rounded-sm md:rounded-xl transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center space-x-2 disabled:opacity-60 disabled:cursor-not-allowed"
+                whileHover={!loading ? { scale: 1.02 } : {}}
+                whileTap={!loading ? { scale: 0.98 } : {}}
               >
-                <Send className="w-5 h-5" />
-                <span>Send Message</span>
+                {loading ? (
+                  <>
+                    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                    <span>Sending...</span>
+                  </>
+                ) : (
+                  <>
+                    <Send className="w-5 h-5" />
+                    <span>{result ? "Message Sent!" : "Send Message"}</span>
+                  </>
+                )}
               </motion.button>
             </form>
           </motion.div>
