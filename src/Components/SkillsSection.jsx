@@ -7,7 +7,7 @@ export const SkillsSection = () => {
     frontend: {
       title: "Frontend Development",
       icon: <Code className="w-6 h-6" />,
-      linear: "from-indigo-400 to-slate-400",
+      linear: "from-rose-900 to-amber-100",
       technologies: [
         { name: "HTML & CSS", level: 70 },
         { name: "JavaScript", level: 60 },
@@ -19,7 +19,7 @@ export const SkillsSection = () => {
     design: {
       title: "Graphic Design",
       icon: <Palette className="w-6 h-6" />,
-      linear: "from-violet-400 to-rose-300",
+      linear: "from-rose-900 to-amber-100",
       technologies: [
         { name: "Adobe Illustrator", level: 90 },
         { name: "Photoshop", level: 70 },
@@ -31,7 +31,7 @@ export const SkillsSection = () => {
     backend: {
       title: "Backend & Tools",
       icon: <Database className="w-6 h-6" />,
-      linear: "from-emerald-400 to-teal-300",
+      linear: "from-rose-900 to-amber-100",
       technologies: [
         { name: "Python", level: 50 },
         { name: "Django", level: 45 },
@@ -238,7 +238,7 @@ export const SkillsSection = () => {
           </p>
           <a
             href="#contact"
-            className="btn-hero inline-flex items-center px-8 py-3 font-semibold rounded-xl overflow-hidden group transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+            className="btn-hero inline-flex text-sm md:text-xl items-center px-8 py-3 font-semibold rounded-2xl md:rounded-xl overflow-hidden group transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
           >
             <span className="relative">Let's Build Something Amazing</span>
           </a>

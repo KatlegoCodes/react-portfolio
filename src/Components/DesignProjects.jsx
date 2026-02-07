@@ -56,12 +56,12 @@ export const DesignProjects = () => {
   const [openRebrandModal, setOpenRebrandModal] = React.useState(false);
 
   return (
-    <section className="py-20 bg-background text-center">
+    <section className="py-10 bg-background text-center">
       <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-7xl font-bold mb-12 text-gray-700">
+        <h2 className="text-4xl md:text-6xl font-bold mb-4 dark:text-foreground mx-auto">
           Graphic Design
         </h2>
-        <p className="text-lg md:text-2xl max-w-3xl mx-auto mb-16 text-muted-foreground">
+        <p className="text-md md:text-2xl max-w-3xl mx-auto mb-16 text-muted-foreground">
           Explore my latest projects spanning frontend development and graphic
           design. Each project represents a unique challenge and creative
           solution.

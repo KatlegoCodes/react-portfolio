@@ -39,10 +39,10 @@
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --shadow-base: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1),
-    0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1),
-    0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-lg:
+    0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl:
+    0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
 
   /* Custom portfolio shadows */
   --shadow-soft: 0 4px 24px -8px hsl(217 82% 57% / 0.1);
@@ -58,8 +58,9 @@
   --radius-2xl: 2rem;
 
   /* Typography */
-  --font-family-sans: "Inter", "SF Pro Display", -apple-system,
-    BlinkMacSystemFont, system-ui, sans-serif;
+  --font-family-sans:
+    "Inter", "SF Pro Display", -apple-system, BlinkMacSystemFont, system-ui,
+    sans-serif;
   --font-family-mono: "SF Mono", "Fira Code", "Roboto Mono", monospace;
 
   /* Transitions */
@@ -86,8 +87,8 @@
   --secondary: 220 14% 96%;
   --secondary-foreground: 220 14% 12%;
 
-  --muted: 220 14% 96%;
-  --muted-foreground: 220 8% 46%;
+  --muted: 220 20% 94%;
+  --muted-foreground: 220 10% 38%;
 
   --accent: 262 70% 55%;
   --accent-foreground: 0 0% 100%;
@@ -97,7 +98,7 @@
   --ring: 217 82% 57%;
 
   /* Custom properties for direct CSS use */
-  --hero-gradient: linear-gradient(135deg, hsl(217 82% 57%), hsl(262 70% 55%));
+  --hero-gradient: linear-gradient(90deg, #94192c, #ddb08b);
   --card-gradient: linear-gradient(145deg, hsl(0 0% 100%), hsl(220 14% 98%));
   --accent-gradient: linear-gradient(
     135deg,
@@ -110,10 +111,10 @@
    Dark Theme
 ---------------------------- */
 .dark {
-  --background: 224 20% 6%;
-  --foreground: 220 14% 95%;
+  --background: 220 20% 12%;
+  --foreground: 220 15% 92%;
 
-  --card: 224 20% 8%;
+  --card: 220 18% 16%;
   --card-foreground: 220 14% 95%;
 
   --primary: 217 82% 57%;
@@ -133,7 +134,7 @@
   --ring: 217 82% 57%;
 
   /* Dark theme gradients */
-  --hero-gradient: linear-gradient(135deg, hsl(217 82% 57%), hsl(262 70% 55%));
+  --hero-gradient: linear-gradient(90deg, #94192c, #ddb08b);
   --card-gradient: linear-gradient(145deg, hsl(224 20% 8%), hsl(224 15% 12%));
   --accent-gradient: linear-gradient(
     135deg,
@@ -168,7 +169,9 @@
   body {
     background-color: hsl(var(--background));
     color: hsl(var(--foreground));
-    font-feature-settings: "rlig" 1, "calt" 1;
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Github, Linkedin, Mail, Instagram } from "lucide-react";
+import { Github, Linkedin, Mail, Instagram } from "lucide-react";
 import { DarkModeToggle } from "./DarkModeToggle";
 import Prism from "../Components/Prism";
 
@@ -12,7 +12,7 @@ export const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
+    <section className="relative h-auto flex items-center justify-center overflow-hidden bg-background">
       <motion.div
         className="absolute top-2 right-2 z-20"
         initial={{ opacity: 0, y: -20 }}
@@ -21,7 +21,6 @@ export const Hero = () => {
       >
         <DarkModeToggle />
       </motion.div>
-      {/* Background Image with Gradient Overlay */}
 
       <div className="absolute inset-0 bg-linear-to-b from-background/80 via-background/60 to-background/80" />
 
@@ -44,7 +43,7 @@ export const Hero = () => {
             Hi, I'm
           </motion.h3>
           <motion.h1
-            className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight dark:text-gray-400"
+            className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight dark:text-gray-400 mb-0"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -95,8 +94,7 @@ export const Hero = () => {
             onClick={scrollToProjects}
             className="group relative inline-flex items-center gap-3 h-12 px-8 rounded-xl text-white font-bold overflow-hidden transition-all duration-300 hover:scale-105"
             style={{
-              background:
-                "linear-gradient(to right, hsl(var(--primary)), hsl(var(--accent)))",
+              background: "var(--hero-gradient)",
             }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -106,9 +104,7 @@ export const Hero = () => {
               className="relative z-10"
               animate={{ x: [0, 5, 0] }}
               transition={{ duration: 1.5, repeat: Infinity, delay: 1.5 }}
-            >
-              <ArrowRight className="w-5 h-5" />
-            </motion.div>
+            ></motion.div>
             <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </motion.button>
 

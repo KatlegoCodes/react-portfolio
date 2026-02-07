@@ -1,16 +1,16 @@
 import React from "react";
 import { ExternalLink, Github } from "lucide-react";
-import image_1 from "../assets/frontend/design1.jpg";
-import image_2 from "../assets/frontend/design2.png";
-import image_3 from "../assets/frontend/design3.jpg";
-import image_4 from "../assets/frontend/design4.jpg";
+import image_1 from "../assets/frontend/design-5.png";
+import image_2 from "../assets/frontend/One-Piece.png";
+import image_3 from "../assets/frontend/tenzi-react.png";
+import image_4 from "../assets/frontend/design3.jpg";
 
 export const frontendProjects = [
   {
     id: 1,
     title: "E-Commerce Platform",
     description:
-      "A full-stack e-commerce solution with React, Node.js, and Stripe integration. Features user authentication, product filtering, and secure payments.",
+      "A modern e-commerce platform built with React and Tailwind CSS. It features a responsive design, product listings, shopping cart functionality, and a seamless checkout process.",
     image: image_1,
     category: "Frontend",
     technologies: ["React", "Tailwind"],
@@ -20,11 +20,11 @@ export const frontendProjects = [
   },
   {
     id: 2,
-    title: "Chef Claude's Recipes",
+    title: "One Piece Guess Game",
     description:
-      "A recipe app that allows users to browse, search, and save their favorite recipes. Built with React and a RESTful API.",
+      "An engaging and interactive game where players guess One Piece characters from a series of challenging clues. Built with React and Tailwind CSS, it includes responsive layouts, subtle animations.",
     image: image_2,
-    category: "Fullstack",
+    category: "Frontend",
     technologies: ["React", "Tailwind"],
     liveUrl: "https://chef-claudes-recipes.example.com",
     githubUrl: "https://github.com/katlegoCodes/Chef-Claudes-Recipes",
@@ -34,7 +34,7 @@ export const frontendProjects = [
     id: 3,
     title: "Tenzies Game",
     description:
-      "A fun and interactive dice game built with React. Players try to roll all dice to the same number in as few rolls as possible.",
+      "A digital version of the classic Tenzies dice game, created using React and styled with Tailwind CSS. Players roll dice to match numbers and win by getting all dice to show the same number.",
     image: image_3,
     category: "Frontend",
     technologies: ["React", "Tailwind"],
@@ -44,14 +44,14 @@ export const frontendProjects = [
   },
   {
     id: 4,
-    title: "Assembly-Endgame Clone",
+    title: "StudioFlow",
     description:
-      "A clone of the popular Assembly-Endgame website, showcasing modern design and responsive layout using React and Tailwind CSS.",
+      "A Django-based client and project management system designed for creative studios. It offers features like project tracking, client communication, and task management to streamline workflows and enhance collaboration.",
     image: image_4,
     category: "Frontend",
-    technologies: ["React", "Tailwind"],
-    liveUrl: "https://assembly-endgame-clone.example.com",
-    githubUrl: "https://github.com/katlegoCodes/assembly-endgame-clone",
+    technologies: ["Python", "Django", "Bootstrap"],
+    liveUrl: "https://studioflow.up.railway.app",
+    githubUrl: "https://github.com/katlegoCodes/studioflow",
     featured: true,
   },
 ];
@@ -60,12 +60,12 @@ export const FrontendProjects = () => {
   const [selectedProject, setSelectedProject] = React.useState(null);
 
   return (
-    <section className="py-20 bg-background text-center">
+    <section className="py-10 bg-background text-center">
       <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-5xl md:text-7xl font-bold mb-12 text-gray-700 mx-auto">
+        <h2 className="text-4xl md:text-6xl font-bold mb-4 dark:text-foreground mx-auto">
           Frontend Development
         </h2>
-        <p className="text-lg md:text-2xl max-w-3xl mx-auto mb-16 text-muted-foreground">
+        <p className="text-md md:text-2xl max-w-3xl mx-auto mb-16 text-muted-foreground">
           Interactive web applications and user interfaces built with modern
           technologies. Each project focuses on performance, accessibility, and
           great user experience.
