@@ -6,6 +6,8 @@ import poster from "../assets/Siya.jpg";
 import { Link } from "react-router-dom";
 import { BrandIdentity } from "./BrandIdentity";
 import { Rebrand } from "./Rebrand";
+import { IllustrationsGallery } from "./IllustrationsGallery"; // New component
+import { SportPosters } from "./SportPosters"; // New component
 
 export const projects = [
   {
@@ -54,6 +56,9 @@ export const DesignProjects = () => {
   const [selectProject, setSelectProject] = React.useState(null);
   const [openBrandModal, setOpenBrandModal] = React.useState(false);
   const [openRebrandModal, setOpenRebrandModal] = React.useState(false);
+  const [openIllustrationsModal, setOpenIllustrationsModal] =
+    React.useState(false);
+  const [openPostersModal, setOpenPostersModal] = React.useState(false);
 
   return (
     <section className="py-10 bg-background text-center">
@@ -127,7 +132,7 @@ export const DesignProjects = () => {
                   ))}
                 </div>
 
-                {/* CONDITIONAL BUTTONS */}
+                {/* UPDATED CONDITIONAL BUTTONS - ALL MODALS NOW */}
                 {selectProject.id === 1 ? (
                   <button
                     onClick={() => {
@@ -148,14 +153,27 @@ export const DesignProjects = () => {
                   >
                     View Project
                   </button>
-                ) : (
-                  <Link
-                    to={selectProject.link || `/projects/${selectProject.id}`}
+                ) : selectProject.id === 3 ? (
+                  <button
+                    onClick={() => {
+                      setOpenIllustrationsModal(true);
+                      setSelectProject(null);
+                    }}
                     className="inline-block mt-4 px-4 py-2 bg-primary text-white rounded hover:bg-primary/80 transition"
                   >
                     View Project
-                  </Link>
-                )}
+                  </button>
+                ) : selectProject.id === 4 ? (
+                  <button
+                    onClick={() => {
+                      setOpenPostersModal(true);
+                      setSelectProject(null);
+                    }}
+                    className="inline-block mt-4 px-4 py-2 bg-primary text-white rounded hover:bg-primary/80 transition"
+                  >
+                    View Project
+                  </button>
+                ) : null}
               </div>
             </div>
           </div>
@@ -171,6 +189,18 @@ export const DesignProjects = () => {
         <Rebrand
           isOpen={openRebrandModal}
           onClose={() => setOpenRebrandModal(false)}
+        />
+
+        {/* EDITORIAL ILLUSTRATIONS MODAL */}
+        <IllustrationsGallery
+          isOpen={openIllustrationsModal}
+          onClose={() => setOpenIllustrationsModal(false)}
+        />
+
+        {/* SPORT POSTERS MODAL */}
+        <SportPosters
+          isOpen={openPostersModal}
+          onClose={() => setOpenPostersModal(false)}
         />
       </div>
     </section>
