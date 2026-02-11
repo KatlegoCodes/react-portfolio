@@ -136,7 +136,7 @@ export const ContactSection = () => {
                     href="tel:+27620062323"
                     className="text-md md:text-lg text-foreground hover:text-primary transition-colors duration-300"
                   >
-                    +27 620 062 323
+                    +27 67 006 2323
                   </a>
                 </div>
               </motion.div>
@@ -179,7 +179,7 @@ export const ContactSection = () => {
                   },
                   {
                     icon: <Instagram className="w-5 h-5" />,
-                    href: "https://instagram.com/jumping-foxx",
+                    href: "https://instagram.com/jumping_foxx",
                     label: "Instagram",
                   },
                 ].map((social) => (

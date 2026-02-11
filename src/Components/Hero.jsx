@@ -27,7 +27,7 @@ export const Hero = () => {
       {/* Content */}
       <div className="relative z-10 text-center max-w-4xl mx-auto px-6 pt-24 md:pt-10">
         <motion.div
-          className="space-y-6"
+          className="space-y-2"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -35,7 +35,7 @@ export const Hero = () => {
           {/* Name */}
 
           <motion.h3
-            className="text-3xl md:text-7xl lg:text-6xl font-bold leading-tight"
+            className="text-4xl md:text-7xl lg:text-6xl font-bold leading-tight"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
