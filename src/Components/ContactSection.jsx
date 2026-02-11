@@ -288,7 +288,7 @@ export const ContactSection = () => {
               <motion.button
                 type="submit"
                 disabled={loading}
-                className="w-full bg-gray-800 hover:bg-gray-700 dark:bg-muted-foreground text-primary-foreground font-semibold py-4 px-8 rounded-sm md:rounded-xl transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center space-x-2 disabled:opacity-60 disabled:cursor-not-allowed"
+                className="w-full bg-gray-800 hover:bg-gray-700 dark:bg-muted-foreground text-primary-foreground font-semibold py-4 px-8 rounded-md md:rounded-xl transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center space-x-2 disabled:opacity-60 disabled:cursor-not-allowed"
                 whileHover={!loading ? { scale: 1.02 } : {}}
                 whileTap={!loading ? { scale: 0.98 } : {}}
               >
