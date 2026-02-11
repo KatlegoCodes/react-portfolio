@@ -2,16 +2,16 @@ import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ReactDOM from "react-dom";
 
-import illustration_1 from "../assets/Illustrations/illustration-1.jpg";
-import illustration_2 from "../assets/Illustrations/illustration-2.jpg";
-import illustration_3 from "../assets/Illustrations/illustration-3.jpg";
-import illustration_4 from "../assets/Illustrations/illustration-4.jpg";
-import illustration_5 from "../assets/Illustrations/illustration-5.jpg";
-import illustration_6 from "../assets/Illustrations/illustration-6.jpg";
-import illustration_7 from "../assets/Illustrations/illustration-7.jpg";
-import illustration_8 from "../assets/Illustrations/illustration-8.jpg";
-import illustration_9 from "../assets/Illustrations/illustration-9.jpg";
-import illustration_10 from "../assets/Illustrations/illustration-10.jpg";
+import illustration_1 from "../assets/Illustrations/Illustration-1.jpg";
+import illustration_2 from "../assets/Illustrations/Illustration-2.jpg";
+import illustration_3 from "../assets/Illustrations/Illustration-3.jpg";
+import illustration_4 from "../assets/Illustrations/Illustration-4.jpg";
+import illustration_5 from "../assets/Illustrations/Illustration-5.jpg";
+import illustration_6 from "../assets/Illustrations/Illustration-6.jpg";
+import illustration_7 from "../assets/Illustrations/Illustration-7.jpg";
+import illustration_8 from "../assets/Illustrations/Illustration-8.jpg";
+import illustration_9 from "../assets/Illustrations/Illustration-9.jpg";
+import illustration_10 from "../assets/Illustrations/Illustration-10.jpg";
 
 const illustrations = [
   { src: illustration_1, title: "The Artist" },
