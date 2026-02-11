@@ -6,8 +6,22 @@ import wallpaper from "../assets/Brand Identity Design/Wallpaper.jpg";
 import wallpaper_2 from "../assets/Brand Identity Design/Grey-Wallpaper.jpg";
 import business_card from "../assets/Brand Identity Design/Business-Card-design.jpg";
 import letterhead from "../assets/Brand Identity Design/Letterhead.jpg";
+import design_2 from "../assets/Brand Identity Design/3.jpg";
+import design_3 from "../assets/Brand Identity Design/4.jpg";
+import design_4 from "../assets/Brand Identity Design/1.jpg";
+import design_5 from "../assets/Brand Identity Design/2.jpg";
 
-const images = [brand_logo, wallpaper, wallpaper_2, business_card, letterhead];
+const images = [
+  wallpaper,
+  design_2,
+  design_4,
+  design_5,
+  design_3,
+  brand_logo,
+  wallpaper_2,
+  business_card,
+  letterhead,
+];
 
 export const BrandIdentity = ({ isOpen, onClose }) => {
   React.useEffect(() => {

@@ -1,5 +1,5 @@
 import React from "react";
-import design_project_1 from "../assets/design1.jpg";
+import design_project_1 from "../assets/Brand Identity Design/Grey-Wallpaper.jpg";
 import design_project_2 from "../assets/Rebrand-pc.jpg";
 import illustration_8 from "../assets/Illustration-8.jpg";
 import poster from "../assets/Siya.jpg";

@@ -2,8 +2,22 @@ import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import rebrand from "../assets/Football Club rebrand/Rebrand-pc.jpg";
+import rebrand_2 from "../assets/Football Club rebrand/7.jpg";
+import rebrand_3 from "../assets/Football Club rebrand/2.jpg";
+import rebrand_4 from "../assets/Football Club rebrand/3.jpg";
+import rebrand_5 from "../assets/Football Club rebrand/4.jpg";
+import rebrand_6 from "../assets/Football Club rebrand/9.jpg";
+import rebrand_7 from "../assets/Football Club rebrand/8.jpg";
 
-const images = [rebrand];
+const images = [
+  rebrand,
+  rebrand_2,
+  rebrand_3,
+  rebrand_4,
+  rebrand_5,
+  rebrand_6,
+  rebrand_7,
+];
 
 export const Rebrand = ({ isOpen, onClose }) => {
   React.useEffect(() => {
@@ -58,13 +72,18 @@ export const Rebrand = ({ isOpen, onClose }) => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1, duration: 0.5 }}
                 >
-                  <motion.img
-                    src={img}
-                    alt={`Rebrand ${index + 1}`}
-                    className="rounded-xl max-w-[90vw] h-auto shadow-lg"
-                    whileHover={{ scale: 1.01 }}
-                    transition={{ type: "spring", stiffness: 120 }}
-                  />
+                  {/* A4 Frame */}
+                  <div className="bg-neutral-900 p-6 rounded-2xl shadow-2xl">
+                    <div className="relative aspect-[1/1.414] w-[min(90vw,700px)] bg-white rounded-lg overflow-hidden">
+                      <motion.img
+                        src={img}
+                        alt={`Rebrand ${index + 1}`}
+                        className="absolute inset-0 w-full h-full object-contain"
+                        whileHover={{ scale: 1.01 }}
+                        transition={{ type: "spring", stiffness: 120 }}
+                      />
+                    </div>
+                  </div>
                 </motion.div>
               ))}
             </div>
