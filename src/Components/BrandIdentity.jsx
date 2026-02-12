@@ -1,7 +1,7 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
-import brand_logo from "../assets/Brand Identity Design/Brand-logo.png";
+import brand_logo from "../assets/Brand Identity Design/Brand-Logo.png";
 import wallpaper from "../assets/Brand Identity Design/Wallpaper.jpg";
 import wallpaper_2 from "../assets/Brand Identity Design/Grey-Wallpaper.jpg";
 import business_card from "../assets/Brand Identity Design/Business-Card-design.jpg";
