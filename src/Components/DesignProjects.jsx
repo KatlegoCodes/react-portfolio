@@ -88,11 +88,30 @@ export const DesignProjects = () => {
                 decoding="async"
               />
               <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="absolute bottom-4 left-4 text-left translate-y-8 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+              {/* Mobile title (always visible) */}
+              <div className="absolute bottom-0 left-0 w-full p-4 bg-black/60 md:hidden">
+                <h3 className="text-white text-lg font-semibold">
+                  {project.title}
+                </h3>
+                <p
+                  className="inline-flex items-center gap-2 mt-1 px-3 py-1 rounded-full
+               text-[11px] font-semibold tracking-wide uppercase
+               bg-white/10 text-white backdrop-blur-sm border border-white/20"
+                >
+                  {project.category}
+                </p>
+              </div>
+
+              {/* Desktop hover title */}
+              <div className="absolute bottom-4 left-4 text-left translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 hidden md:block">
                 <h3 className="text-white text-xl font-semibold">
                   {project.title}
                 </h3>
-                <p className="text-accent text-sm font-medium mt-1">
+                <p
+                  className="inline-flex items-center gap-2 mt-1 px-3 py-1 rounded-full
+               text-[11px] font-semibold tracking-wide uppercase
+               bg-white/10 text-white backdrop-blur-sm border border-white/20"
+                >
                   {project.category}
                 </p>
               </div>
