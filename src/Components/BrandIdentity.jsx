@@ -24,6 +24,8 @@ const images = [
 ];
 
 export const BrandIdentity = ({ isOpen, onClose }) => {
+  const [activeImage, setActiveImage] = React.useState(null);
+
   React.useEffect(() => {
     const handleEscape = (event) => {
       if (event.key === "Escape") {
@@ -80,12 +82,40 @@ export const BrandIdentity = ({ isOpen, onClose }) => {
                   whileHover={{ scale: 1.01 }}
                   loading="lazy"
                   decoding="async"
+                  onClick={() => setActiveImage(img)}
                 />
               ))}
             </div>
           </motion.div>
         </motion.div>
       )}
+
+      {/* LIGHTBOX */}
+      <AnimatePresence>
+        {activeImage && (
+          <motion.div
+            className="fixed inset-0 z-60 flex items-center justify-center bg-black/95 p-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setActiveImage(null)}
+          >
+            <motion.img
+              src={activeImage}
+              alt="Active"
+              className="max-w-[95vw] max-h-[95vh] object-contain rounded-xl"
+              onClick={(e) => e.stopPropagation()} // prevents closing when clicking image
+            />
+
+            <button
+              className="absolute top-6 right-6 text-white bg-black/50 rounded-full p-2 hover:bg-black/70 transition"
+              onClick={() => setActiveImage(null)}
+            >
+              <X size={28} />
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </AnimatePresence>
   );
 };

@@ -20,6 +20,8 @@ const images = [
 ];
 
 export const Rebrand = ({ isOpen, onClose }) => {
+  const [activeImage, setActiveImage] = React.useState(null);
+
   React.useEffect(() => {
     const handleEscape = (event) => {
       if (event.key === "Escape") {
@@ -42,14 +44,14 @@ export const Rebrand = ({ isOpen, onClose }) => {
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-4"
+          className="fixed inset-0 z-50 bg-black/95 backdrop-blur-lg flex items-center justify-center p-6"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={onClose}
         >
           <motion.div
-            className="relative w-full max-w-6xl h-[95vh] overflow-y-auto rounded-2xl shadow-2xl bg-[#0e0e0e]"
+            className="relative w-full max-w-6xl h-[95vh] overflow-y-auto shadow-2xl bg-[#0e0e0e]"
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.9, opacity: 0 }}
@@ -63,7 +65,7 @@ export const Rebrand = ({ isOpen, onClose }) => {
               <X size={24} />
             </button>
 
-            <div className="flex flex-col items-center space-y-8 py-10 px-4">
+            <div className="flex flex-col space-y-8 py-10">
               {images.map((img, index) => (
                 <motion.div
                   key={index}
@@ -71,14 +73,15 @@ export const Rebrand = ({ isOpen, onClose }) => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1, duration: 0.5 }}
+                  onClick={() => setActiveImage(img)}
                 >
                   {/* A4 Frame */}
-                  <div className="bg-neutral-900 p-6 rounded-2xl shadow-2xl">
+                  <div>
                     <div className="relative aspect-[1/1.414] w-[min(90vw,700px)] bg-white rounded-lg overflow-hidden">
                       <motion.img
                         src={img}
                         alt={`Rebrand ${index + 1}`}
-                        className="absolute inset-0 w-full h-full object-contain"
+                        className="w-full h-auto object-contain shadow-lg cursor-zoom-in"
                         whileHover={{ scale: 1.01 }}
                         transition={{ type: "spring", stiffness: 120 }}
                         loading="lazy"
@@ -90,6 +93,30 @@ export const Rebrand = ({ isOpen, onClose }) => {
               ))}
             </div>
           </motion.div>
+        </motion.div>
+      )}
+      {/* Lightbox for active image */}
+      {activeImage && (
+        <motion.div
+          className="fixed inset-0 z-50 bg-black/95 backdrop-blur-lg flex items-center justify-center p-6"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={() => setActiveImage(null)}
+        >
+          {" "}
+          <motion.img
+            src={activeImage}
+            alt="Active Rebrand"
+            className="max-w-[95vw] max-h-[95vh] object-contain rounded-lg shadow-2xl cursor-zoom-out"
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.9, opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            onClick={(e) => e.stopPropagation()}
+            loading="lazy"
+            decoding="async"
+          />
         </motion.div>
       )}
     </AnimatePresence>
