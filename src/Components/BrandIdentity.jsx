@@ -1,15 +1,15 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
-import brand_logo from "../assets/Brand Identity Design/Brand-Logo.png";
-import wallpaper from "../assets/Brand Identity Design/Wallpaper.jpg";
-import wallpaper_2 from "../assets/Brand Identity Design/Grey-Wallpaper.jpg";
-import business_card from "../assets/Brand Identity Design/Business-Card-design.jpg";
-import letterhead from "../assets/Brand Identity Design/Letterhead.jpg";
-import design_2 from "../assets/Brand Identity Design/3.jpg";
-import design_3 from "../assets/Brand Identity Design/4.jpg";
-import design_4 from "../assets/Brand Identity Design/1.jpg";
-import design_5 from "../assets/Brand Identity Design/2.jpg";
+import brand_logo from "../assets/Brand Identity Design/original/Brand-Logo.png";
+import wallpaper from "../assets/Brand Identity Design/original/Wallpaper.webp";
+import wallpaper_2 from "../assets/Brand Identity Design/original/Grey-Wallpaper.webp";
+import business_card from "../assets/Brand Identity Design/original/Business-Card-design.webp";
+import letterhead from "../assets/Brand Identity Design/original/Letterhead.jpg";
+import design_2 from "../assets/Brand Identity Design/original/3.jpg";
+import design_3 from "../assets/Brand Identity Design/original/4.jpg";
+import design_4 from "../assets/Brand Identity Design/original/1.jpg";
+import design_5 from "../assets/Brand Identity Design/original/2.jpg";
 
 const images = [
   wallpaper,
@@ -82,6 +82,8 @@ export const BrandIdentity = ({ isOpen, onClose }) => {
                     className="rounded-xl max-w-full h-auto shadow-lg"
                     whileHover={{ scale: 1.01 }}
                     transition={{ type: "spring", stiffness: 120 }}
+                    loading="lazy"
+                    decoding="async"
                   />
                 </motion.div>
               ))}

@@ -2,21 +2,19 @@ import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ReactDOM from "react-dom";
 
-// Import all posters (keep your existing imports)
-import poster_1 from "../assets/Sport Posters/poster-1.jpg";
-import poster_2 from "../assets/Sport Posters/poster-2.jpg";
-import poster_3 from "../assets/Sport Posters/poster-3.jpg";
-import poster_4 from "../assets/Sport Posters/poster-4.jpg";
-import poster_5 from "../assets/Sport Posters/poster-5.jpg";
-import poster_6 from "../assets/Sport Posters/poster-6.jpg";
-import poster_7 from "../assets/Sport Posters/poster-7.jpg";
-import poster_8 from "../assets/Sport Posters/poster-8.jpg";
-import poster_9 from "../assets/Sport Posters/poster-9.jpg";
-import poster_10 from "../assets/Sport Posters/poster-10.jpg";
-import poster_11 from "../assets/Sport Posters/poster-11.jpg";
-import poster_12 from "../assets/Sport Posters/poster-12.jpg";
+import poster_1 from "../assets/Sport Posters/web/poster-1.webp";
+import poster_2 from "../assets/Sport Posters/web/poster-2.webp";
+import poster_3 from "../assets/Sport Posters/web/poster-3.webp";
+import poster_4 from "../assets/Sport Posters/web/poster-4.webp";
+import poster_5 from "../assets/Sport Posters/web/poster-5.webp";
+import poster_6 from "../assets/Sport Posters/web/poster-6.webp";
+import poster_7 from "../assets/Sport Posters/web/poster-7.webp";
+import poster_8 from "../assets/Sport Posters/web/poster-8.webp";
+import poster_9 from "../assets/Sport Posters/web/poster-9.webp";
+import poster_10 from "../assets/Sport Posters/web/poster-10.webp";
+import poster_11 from "../assets/Sport Posters/web/poster-11.webp";
+import poster_12 from "../assets/Sport Posters/web/poster-12.webp";
 
-// Enhanced close icon
 const X = () => (
   <svg
     width="24"
@@ -135,6 +133,7 @@ export const SportPosters = ({ isOpen, onClose }) => {
                     alt={item.title}
                     onClick={() => setActiveIndex(index)}
                     className="cursor-pointer rounded-2xl h-80 w-full object-cover hover:scale-105 transition"
+                    loading="lazy"
                   />
                 ))}
               </motion.div>
@@ -152,6 +151,7 @@ export const SportPosters = ({ isOpen, onClose }) => {
                   src={posters[activeIndex].src}
                   alt=""
                   className="max-w-[95vw] max-h-[95vh] object-contain"
+                  loading="lazy"
                 />
 
                 {/* Arrows */}

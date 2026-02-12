@@ -1,13 +1,13 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
-import rebrand from "../assets/Football Club rebrand/Rebrand-pc.jpg";
-import rebrand_2 from "../assets/Football Club rebrand/7.jpg";
-import rebrand_3 from "../assets/Football Club rebrand/2.jpg";
-import rebrand_4 from "../assets/Football Club rebrand/3.jpg";
-import rebrand_5 from "../assets/Football Club rebrand/4.jpg";
-import rebrand_6 from "../assets/Football Club rebrand/9.jpg";
-import rebrand_7 from "../assets/Football Club rebrand/8.jpg";
+import rebrand from "../assets/Football Club rebrand/original/Rebrand-pc.jpg";
+import rebrand_2 from "../assets/Football Club rebrand/original/7.jpg";
+import rebrand_3 from "../assets/Football Club rebrand/original/2.jpg";
+import rebrand_4 from "../assets/Football Club rebrand/original/3.jpg";
+import rebrand_5 from "../assets/Football Club rebrand/original/4.webp";
+import rebrand_6 from "../assets/Football Club rebrand/original/9.webp";
+import rebrand_7 from "../assets/Football Club rebrand/original/8.webp";
 
 const images = [
   rebrand,
@@ -81,6 +81,8 @@ export const Rebrand = ({ isOpen, onClose }) => {
                         className="absolute inset-0 w-full h-full object-contain"
                         whileHover={{ scale: 1.01 }}
                         transition={{ type: "spring", stiffness: 120 }}
+                        loading="lazy"
+                        decoding="async"
                       />
                     </div>
                   </div>

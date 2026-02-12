@@ -2,18 +2,18 @@ import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ReactDOM from "react-dom";
 
-import illustration_1 from "../assets/Illustrations/Illustration-1.jpg";
-import illustration_2 from "../assets/Illustrations/Illustration-2.jpg";
-import illustration_3 from "../assets/Illustrations/Illustration-3.jpg";
-import illustration_4 from "../assets/Illustrations/Illustration-4.jpg";
-import illustration_5 from "../assets/Illustrations/Illustration-5.jpg";
-import illustration_6 from "../assets/Illustrations/Illustration-6.jpg";
-import illustration_7 from "../assets/Illustrations/Illustration-7.jpg";
-import illustration_8 from "../assets/Illustrations/Illustration-8.jpg";
-import illustration_9 from "../assets/Illustrations/Illustration-9.jpg";
-import illustration_10 from "../assets/Illustrations/Illustration-10.jpg";
-import illustration_11 from "../assets/Illustrations/Illustration-11.jpg";
-import illustration_12 from "../assets/Illustrations/Illustration-12.jpg";
+import illustration_1 from "../assets/Illustrations/web/Illustration-1.webp";
+import illustration_2 from "../assets/Illustrations/web/Illustration-2.webp";
+import illustration_3 from "../assets/Illustrations/web/Illustration-3.webp";
+import illustration_4 from "../assets/Illustrations/web/Illustration-4.webp";
+import illustration_5 from "../assets/Illustrations/web/Illustration-5.webp";
+import illustration_6 from "../assets/Illustrations/web/Illustration-6.webp";
+import illustration_7 from "../assets/Illustrations/web/Illustration-7.webp";
+import illustration_8 from "../assets/Illustrations/web/Illustration-8.webp";
+import illustration_9 from "../assets/Illustrations/web/Illustration-9.webp";
+import illustration_10 from "../assets/Illustrations/web/Illustration-10.webp";
+import illustration_11 from "../assets/Illustrations/web/Illustration-11.webp";
+import illustration_12 from "../assets/Illustrations/web/Illustration-12.webp";
 
 const illustrations = [
   { src: illustration_1, title: "The Artist" },
@@ -106,6 +106,7 @@ export const IllustrationsGallery = ({ isOpen, onClose }) => {
                       src={item.src}
                       alt={item.title}
                       className="w-full h-[480px] object-cover"
+                      loading="lazy"
                     />
                   </motion.div>
                 ))}
@@ -124,6 +125,8 @@ export const IllustrationsGallery = ({ isOpen, onClose }) => {
                   src={illustrations[activeIndex].src}
                   alt={illustrations[activeIndex].title}
                   className="max-w-[95vw] max-h-[95vh] object-contain"
+                  loading="lazy"
+                  decoding="async"
                 />
 
                 {/* Title */}

@@ -1,7 +1,7 @@
 import React from "react";
-import design_project_1 from "../assets/Brand Identity Design/Grey-Wallpaper.jpg";
+import design_project_1 from "../assets/Brand Identity Design/original/Grey-Wallpaper.webp";
 import design_project_2 from "../assets/Rebrand-pc.jpg";
-import illustration_8 from "../assets/Illustration-8.jpg";
+import illustration_8 from "../assets/Illustration-8.webp";
 import poster from "../assets/Siya.jpg";
 import { Link } from "react-router-dom";
 import { BrandIdentity } from "./BrandIdentity";
@@ -84,6 +84,8 @@ export const DesignProjects = () => {
                 src={project.image}
                 alt={project.title}
                 className="w-full h-80 object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                loading="lazy"
+                decoding="async"
               />
               <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="absolute bottom-4 left-4 text-left translate-y-8 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
@@ -112,6 +114,7 @@ export const DesignProjects = () => {
                 src={selectProject.image}
                 alt={selectProject.title}
                 className="w-full h-80 object-cover"
+                loading="lazy"
               />
               <div className="p-6 text-left">
                 <h3 className="text-2xl font-bold mb-2 text-primary">
