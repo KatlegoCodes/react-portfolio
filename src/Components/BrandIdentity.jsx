@@ -53,7 +53,7 @@ export const BrandIdentity = ({ isOpen, onClose }) => {
           onClick={onClose}
         >
           <motion.div
-            className="relative w-full max-w-6xl h-[95vh] overflow-y-auto rounded-2xl shadow-2xl bg-[#0e0e0e]"
+            className="relative w-full max-w-5xl h-[95vh] overflow-y-auto rounded-2xl shadow-2xl bg-[#0e0e0e]"
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.9, opacity: 0 }}
@@ -67,25 +67,20 @@ export const BrandIdentity = ({ isOpen, onClose }) => {
               <X size={24} />
             </button>
 
-            <div className="flex flex-col items-center space-y-8 py-10 px-4">
+            <div className="flex flex-col space-y-12 py-12">
               {images.map((img, index) => (
-                <motion.div
+                <motion.img
                   key={index}
-                  className="w-full flex justify-center"
+                  src={img}
+                  alt={`Brand Identity ${index + 1}`}
+                  className="w-full h-auto object-contain shadow-lg"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1, duration: 0.5 }}
-                >
-                  <motion.img
-                    src={img}
-                    alt={`Brand Identity ${index + 1}`}
-                    className="rounded-xl max-w-full h-auto shadow-lg"
-                    whileHover={{ scale: 1.01 }}
-                    transition={{ type: "spring", stiffness: 120 }}
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </motion.div>
+                  whileHover={{ scale: 1.01 }}
+                  loading="lazy"
+                  decoding="async"
+                />
               ))}
             </div>
           </motion.div>
