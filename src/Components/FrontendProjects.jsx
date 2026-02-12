@@ -48,7 +48,7 @@ export const frontendProjects = [
     description:
       "A Django-based client and project management system designed for creative studios. It offers features like project tracking, client communication, and task management to streamline workflows and enhance collaboration.",
     image: image_4,
-    category: "Frontend",
+    category: "Backend",
     technologies: ["Python", "Django", "Bootstrap"],
     liveUrl: "https://studioflow.up.railway.app",
     githubUrl: "https://github.com/katlegoCodes/studioflow",
