@@ -14,6 +14,7 @@ import poster_8 from "../assets/Sport Posters/poster-8.jpg";
 import poster_9 from "../assets/Sport Posters/poster-9.jpg";
 import poster_10 from "../assets/Sport Posters/poster-10.jpg";
 import poster_11 from "../assets/Sport Posters/poster-11.jpg";
+import poster_12 from "../assets/Sport Posters/poster-12.jpg";
 
 // Enhanced close icon
 const X = () => (
@@ -60,6 +61,7 @@ const posters = [
   { src: poster_9, title: "Serving Kant" },
   { src: poster_10, title: "Team SA 4x100m" },
   { src: poster_11, title: "Lions T20 Champions" },
+  { src: poster_12, title: "South Africa's Pride" },
 ];
 
 export const SportPosters = ({ isOpen, onClose }) => {

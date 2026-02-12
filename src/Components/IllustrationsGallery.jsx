@@ -12,6 +12,8 @@ import illustration_7 from "../assets/Illustrations/Illustration-7.jpg";
 import illustration_8 from "../assets/Illustrations/Illustration-8.jpg";
 import illustration_9 from "../assets/Illustrations/Illustration-9.jpg";
 import illustration_10 from "../assets/Illustrations/Illustration-10.jpg";
+import illustration_11 from "../assets/Illustrations/Illustration-11.jpg";
+import illustration_12 from "../assets/Illustrations/Illustration-12.jpg";
 
 const illustrations = [
   { src: illustration_1, title: "The Artist" },
@@ -24,6 +26,8 @@ const illustrations = [
   { src: illustration_8, title: "The Chiller" },
   { src: illustration_9, title: "The Muse" },
   { src: illustration_10, title: "The Visionary" },
+  { src: illustration_11, title: "The Creator" },
+  { src: illustration_12, title: "The Innovator" },
 ];
 
 export const IllustrationsGallery = ({ isOpen, onClose }) => {
