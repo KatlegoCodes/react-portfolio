@@ -61,12 +61,12 @@ export const Hero = () => {
 
           {/* Title */}
           <motion.p
-            className="text-2xl md:text-3xl text-muted-foreground font-medium mb-0 md:mb-4"
+            className="text-3xl md:text-4xl text-muted-foreground font-bold mb-4 md:mb-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.7 }}
           >
-            Frontend Developer & Graphic Designer
+            Graphic Designer turned Front-End Developer
           </motion.p>
 
           {/* Description */}
@@ -76,15 +76,15 @@ export const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.9 }}
           >
-            Front-end developer & graphic designer focused on blending
-            creativity with clean code. Always learning, always building —
-            currently diving deeper into TypeScript and Next.js.
+            I blend design thinking with modern React development to build fast,
+            beautiful, and interactive web applications that feel as good as
+            they look.
           </motion.p>
         </motion.div>
 
         {/* CTA Buttons & Social Links */}
         <motion.div
-          className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-8"
+          className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-8"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1.1 }}
