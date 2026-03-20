@@ -2,7 +2,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, Instagram } from "lucide-react";
 import { DarkModeToggle } from "./DarkModeToggle";
-import Prism from "../Components/Prism";
 
 export const Hero = () => {
   const scrollToProjects = () => {
@@ -35,7 +34,7 @@ export const Hero = () => {
           {/* Name */}
 
           <motion.h3
-            className="text-4xl md:text-7xl lg:text-6xl font-bold leading-tight"
+            className="display-text text-4xl md:text-7xl lg:text-6xl font-bold leading-tight"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -61,7 +60,7 @@ export const Hero = () => {
 
           {/* Title */}
           <motion.p
-            className="text-3xl md:text-4xl text-muted-foreground font-bold mb-4 md:mb-4"
+            className="font-family-display text-3xl md:text-4xl text-muted-foreground font-bold mb-4 md:mb-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.7 }}

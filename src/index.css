@@ -62,6 +62,7 @@
     "Inter", "SF Pro Display", -apple-system, BlinkMacSystemFont, system-ui,
     sans-serif;
   --font-family-mono: "SF Mono", "Fira Code", "Roboto Mono", monospace;
+  --font-family-display: "Playfair Display", serif;
 
   /* Transitions */
   --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -175,6 +176,14 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  .display-text {
+    font-family: var(--font-family-display);
+    letter-spacing: 0.02em;
   }
 
   /* Selection styles */
