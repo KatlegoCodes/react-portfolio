@@ -174,7 +174,7 @@ export const ContactSection = () => {
                   },
                   {
                     icon: <Linkedin className="w-5 h-5" />,
-                    href: "https://linkedin.com",
+                    href: "https://www.linkedin.com/in/katlego-mashigwana-3aa9993b6",
                     label: "LinkedIn",
                   },
                   {

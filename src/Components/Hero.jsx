@@ -117,7 +117,7 @@ export const Hero = () => {
               },
               {
                 icon: <Linkedin className="w-6 h-6" />,
-                href: "https://linkedin.com/in/yourprofile",
+                href: "https://www.linkedin.com/in/katlego-mashigwana-3aa9993b6",
                 label: "LinkedIn",
               },
               {
