@@ -7,7 +7,7 @@ export const SkillsSection = () => {
     frontend: {
       title: "Frontend Development",
       icon: <Code className="w-6 h-6" />,
-      linear: "from-rose-900 to-amber-100",
+      linear: "from-[#FFA585] to-[#FFEDA0]",
       technologies: [
         { name: "HTML & CSS", level: 70 },
         { name: "JavaScript", level: 60 },
@@ -19,7 +19,7 @@ export const SkillsSection = () => {
     design: {
       title: "Graphic Design",
       icon: <Palette className="w-6 h-6" />,
-      linear: "from-rose-900 to-amber-100",
+      linear: "from-[#FFA585] to-[#FFEDA0]",
       technologies: [
         { name: "Adobe Illustrator", level: 90 },
         { name: "Photoshop", level: 70 },
@@ -31,7 +31,7 @@ export const SkillsSection = () => {
     backend: {
       title: "Backend & Tools",
       icon: <Database className="w-6 h-6" />,
-      linear: "from-rose-900 to-amber-100",
+      linear: "from-[#FFA585] to-[#FFEDA0]",
       technologies: [
         { name: "Python", level: 50 },
         { name: "Django", level: 45 },

@@ -28,8 +28,8 @@
   /* Custom colors for specific use cases */
   --color-hero-gradient: linear-gradient(
     135deg,
-    hsl(217 82% 57%),
-    hsl(262 70% 55%)
+    hsl(16 100% 76%),
+    hsl(49 100% 81%)
   );
   --color-success: 142 76% 36%;
   --color-warning: 38 92% 50%;
@@ -99,7 +99,7 @@
   --ring: 217 82% 57%;
 
   /* Custom properties for direct CSS use */
-  --hero-gradient: linear-gradient(90deg, #94192c, #ddb08b);
+  --hero-gradient: linear-gradient(90deg, #ffa585, #ffeda0);
   --card-gradient: linear-gradient(145deg, hsl(0 0% 100%), hsl(220 14% 98%));
   --accent-gradient: linear-gradient(
     135deg,
@@ -135,7 +135,7 @@
   --ring: 217 82% 57%;
 
   /* Dark theme gradients */
-  --hero-gradient: linear-gradient(90deg, #94192c, #ddb08b);
+  --hero-gradient: linear-gradient(90deg, #ffa585, #ffeda0);
   --card-gradient: linear-gradient(145deg, hsl(224 20% 8%), hsl(224 15% 12%));
   --accent-gradient: linear-gradient(
     135deg,
