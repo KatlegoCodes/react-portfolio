@@ -50,7 +50,7 @@ export const frontendProjects = [
     image: image_4,
     category: "Backend",
     technologies: ["Python", "Django", "Bootstrap"],
-    liveUrl: "https://studioflow.up.railway.app",
+    liveUrl: "https://studioflow-rnvm.onrender.com",
     githubUrl: "https://github.com/katlegoCodes/studioflow",
     featured: true,
   },
