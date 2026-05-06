@@ -63,7 +63,7 @@ export const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-background">
+    <section id="contact" className="py-20">
       <div className="max-w-6xl mx-auto px-6">
         <motion.div
           className="text-center mb-16"
@@ -108,7 +108,7 @@ export const ContactSection = () => {
                 whileHover={{ x: 5 }}
                 transition={{ duration: 0.2 }}
               >
-                <div className="p-3 bg-card rounded-xl group-hover:bg-gray-700 transition-colors duration-300">
+                <div className="p-3 bg-card/50 rounded-xl group-hover:bg-gray-700 transition-colors duration-300">
                   <Mail className="w-6 h-6 text-muted-foreground" />
                 </div>
                 <div>
@@ -127,7 +127,7 @@ export const ContactSection = () => {
                 whileHover={{ x: 5 }}
                 transition={{ duration: 0.2 }}
               >
-                <div className="p-3 bg-card rounded-xl group-hover:bg-gray-700 transition-colors duration-300">
+                <div className="p-3 bg-card/50 rounded-xl group-hover:bg-gray-700 transition-colors duration-300">
                   <Phone className="w-6 h-6 text-muted-foreground" />
                 </div>
                 <div>
@@ -146,7 +146,7 @@ export const ContactSection = () => {
                 whileHover={{ x: 5 }}
                 transition={{ duration: 0.2 }}
               >
-                <div className="p-3 bg-card rounded-xl group-hover:bg-gray-700 transition-colors duration-300">
+                <div className="p-3 bg-card/50 rounded-xl group-hover:bg-gray-700 transition-colors duration-300">
                   <MapPin className="w-6 h-6 text-muted-foreground" />
                 </div>
                 <div>
@@ -188,7 +188,7 @@ export const ContactSection = () => {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-3 bg-card rounded-xl hover:bg-gray-700 transition-colors duration-300"
+                    className="p-3 bg-card/50 rounded-xl hover:bg-gray-700 transition-colors duration-300"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                     aria-label={social.label}
@@ -223,7 +223,7 @@ export const ContactSection = () => {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-border rounded-md md:rounded-xl bg-card text-foreground placeholder-muted-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
+                    className="w-full px-4 py-3 border border-border rounded-md md:rounded-xl bg-card/50 text-foreground placeholder-muted-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
                     placeholder="Katlego Mashigwana"
                   />
                 </div>
@@ -241,7 +241,7 @@ export const ContactSection = () => {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-border rounded-md md:rounded-xl bg-card text-foreground placeholder-muted-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
+                    className="w-full px-4 py-3 border border-border rounded-md md:rounded-xl bg-card/50 text-foreground placeholder-muted-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
                     placeholder="katlego@gmail.com"
                   />
                 </div>
@@ -261,7 +261,7 @@ export const ContactSection = () => {
                   required
                   value={formData.subject}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-border rounded-md md:rounded-xl bg-card text-foreground placeholder-muted-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
+                  className="w-full px-4 py-3 border border-border rounded-md md:rounded-xl bg-card/50 text-foreground placeholder-muted-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
                   placeholder="Project Inquiry"
                 />
               </div>
@@ -280,7 +280,7 @@ export const ContactSection = () => {
                   rows={6}
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-border rounded-xl bg-card text-foreground placeholder-muted-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200 resize-none"
+                  className="w-full px-4 py-3 border border-border rounded-xl bg-card/50 text-foreground placeholder-muted-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200 resize-none"
                   placeholder="Tell me about your project"
                 />
               </div>

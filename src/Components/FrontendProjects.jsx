@@ -60,7 +60,7 @@ export const FrontendProjects = () => {
   const [selectedProject, setSelectedProject] = React.useState(null);
 
   return (
-    <section className="py-10 bg-background text-center">
+    <section className="py-10 bg-background/50 rounded-2xl text-center">
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-4xl md:text-6xl font-bold mb-4 dark:text-foreground mx-auto">
           Frontend Development

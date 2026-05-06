@@ -51,7 +51,7 @@ export const Rebrand = ({ isOpen, onClose }) => {
           onClick={onClose}
         >
           <motion.div
-            className="relative w-full max-w-6xl h-[95vh] overflow-y-auto shadow-2xl bg-[#0e0e0e]"
+            className="relative w-full max-w-6xl h-[95vh] overflow-y-auto shadow-2xl bg-[#0e0e0e]/50 rounded-2xl"
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.9, opacity: 0 }}

@@ -9,7 +9,7 @@ export const PortfolioSection = () => {
   return (
     <section
       id="projects"
-      className="min-h-screen bg-background py-6 md:flex md:flex-col md:items-center"
+      className="min-h-screen py-6 md:flex md:flex-col md:items-center"
     >
       {/* Header */}
       <div className="max-w-6xl mx-auto px-6 text-center mb-2 md:mb-6">
@@ -18,12 +18,12 @@ export const PortfolioSection = () => {
         </h1>
 
         {/* Toggle buttons */}
-        <div className="bg-muted md:w-lg rounded-2xl p-2 text-center flex flex-col items-center md:flex md:flex-row md:justify-center gap-4">
+        <div className="bg-muted/50 md:w-lg rounded-2xl p-2 text-center flex flex-col items-center md:flex md:flex-row md:justify-center gap-4">
           <button
             onClick={() => setActiveSection("design")}
             className={`flex items-center gap-2 px-4 py-4 rounded-xl transition-all duration-300 font-semibold text-lg ${
               activeSection === "design"
-                ? "bg-card text-card-foreground shadow-lg"
+                ? "bg-card/50 text-card-foreground shadow-lg"
                 : "text-muted-foreground hover:text-foreground"
             }`}
           >
@@ -35,7 +35,7 @@ export const PortfolioSection = () => {
             onClick={() => setActiveSection("frontend")}
             className={`flex items-center gap-2 px-4 py-4 rounded-xl transition-all duration-300 font-semibold text-lg ${
               activeSection === "frontend"
-                ? "bg-card text-card-foreground shadow-lg"
+                ? "bg-card/50 text-card-foreground shadow-lg"
                 : "text-muted-foreground hover:text-foreground"
             }`}
           >

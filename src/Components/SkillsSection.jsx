@@ -87,7 +87,7 @@ export const SkillsSection = () => {
   const defaultHover = "hover:bg-accent hover:text-accent-foreground";
 
   return (
-    <section id="skills" className="py-20 bg-background">
+    <section id="skills" className="py-20">
       <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
         <motion.div
@@ -111,7 +111,7 @@ export const SkillsSection = () => {
           {Object.entries(skills).map(([key, category]) => (
             <motion.div
               key={key}
-              className="flex flex-col h-full bg-card border border-border rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 group"
+              className="flex flex-col h-full bg-card/50 border border-border rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 group"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -149,7 +149,7 @@ export const SkillsSection = () => {
                       </span>
                     </div>
 
-                    <div className="relative w-full bg-muted rounded-full h-3 overflow-hidden shadow-inner">
+                    <div className="relative w-full bg-muted/50 rounded-full h-3 overflow-hidden shadow-inner">
                       <motion.div
                         className={`h-full rounded-full relative overflow-hidden bg-linear-to-r ${category.linear}`}
                         initial={{ width: 0 }}
@@ -215,7 +215,7 @@ export const SkillsSection = () => {
                   whileHover={{ scale: 1.06, y: -3 }}
                   transition={{ duration: 0.18, delay: idx * 0.03 }}
                   viewport={{ once: true }}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-card border border-border text-card-foreground shadow-sm transition-all duration-200 ${hoverClass}`}
+                  className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-card/50 border border-border text-card-foreground shadow-sm transition-all duration-200 ${hoverClass}`}
                   onMouseDown={(e) => e.preventDefault()}
                 >
                   <span>{tool}</span>

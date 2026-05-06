@@ -66,7 +66,7 @@ export const IllustrationsGallery = ({ isOpen, onClose }) => {
   return ReactDOM.createPortal(
     <AnimatePresence>
       <motion.div
-        className="fixed inset-0 z-50 bg-black/95 backdrop-blur-lg overflow-y-auto"
+        className="fixed inset-0 z-50 bg-black/50 backdrop-blur-lg overflow-y-auto"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
