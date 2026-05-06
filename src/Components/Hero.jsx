@@ -11,7 +11,7 @@ export const Hero = () => {
   };
 
   return (
-    <section className="relative h-auto flex items-center justify-center overflow-hidden bg-background">
+    <section className="relative h-screen flex items-center justify-center">
       <motion.div
         className="absolute top-4 right-4 z-20"
         initial={{ opacity: 0, y: -20 }}
@@ -20,8 +20,6 @@ export const Hero = () => {
       >
         <DarkModeToggle />
       </motion.div>
-
-      <div className="absolute inset-0 bg-linear-to-b from-background/80 via-background/60 to-background/80" />
 
       {/* Content */}
       <div className="relative z-10 text-center max-w-4xl mx-auto px-6 pt-24 md:pt-10">
