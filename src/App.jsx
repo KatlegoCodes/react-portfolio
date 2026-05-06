@@ -11,43 +11,56 @@ import { SkillsSection } from "./Components/SkillsSection";
 import { ContactSection } from "./Components/ContactSection";
 import { Footer } from "./Components/Footer";
 import { ThemeProvider } from "./Components/ThemeProvider";
+import Prism from "./Components/Prism";
 
 export const App = () => {
   return (
     <ThemeProvider>
       <Router>
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                <Hero />
-                <SkillsSection />
-                <PortfolioSection />
-                <ContactSection />
-                <Footer />
-              </>
-            }
+        <div className="fixed inset-0 z-0">
+          <Prism
+            hueShift={0}
+            noiseIntensity={0}
+            scanlineIntensity={0}
+            speed={0.5}
+            scanlineFrequency={0}
+            warpAmount={0}
           />
-          <Route path="/projects/:id" element={<ProjectDetails />} />
-          <Route path="/illustrations" element={<IllustrationsGallery />} />
-          <Route path="/posters" element={<SportPosters />} />
-          <Route path="/brand-identity" element={<BrandIdentity />} />
-          <Route path="/rebrand" element={<Rebrand />} />
-          <Route
-            path="*"
-            element={
-              <div className="min-h-screen flex items-center justify-center">
-                <p className="text-lg">
-                  Page not found --{" "}
-                  <a href="/" className="text-primary">
-                    Go Home
-                  </a>
-                </p>
-              </div>
-            }
-          />
-        </Routes>
+        </div>
+        <div className="relative z-10">
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <>
+                  <Hero />
+                  <SkillsSection />
+                  <PortfolioSection />
+                  <ContactSection />
+                  <Footer />
+                </>
+              }
+            />
+            <Route path="/projects/:id" element={<ProjectDetails />} />
+            <Route path="/illustrations" element={<IllustrationsGallery />} />
+            <Route path="/posters" element={<SportPosters />} />
+            <Route path="/brand-identity" element={<BrandIdentity />} />
+            <Route path="/rebrand" element={<Rebrand />} />
+            <Route
+              path="*"
+              element={
+                <div className="min-h-screen flex items-center justify-center">
+                  <p className="text-lg">
+                    Page not found --{" "}
+                    <a href="/" className="text-primary">
+                      Go Home
+                    </a>
+                  </p>
+                </div>
+              }
+            />
+          </Routes>
+        </div>
       </Router>
     </ThemeProvider>
   );
