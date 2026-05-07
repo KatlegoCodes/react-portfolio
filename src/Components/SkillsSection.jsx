@@ -14,6 +14,7 @@ export const SkillsSection = () => {
         { name: "React", level: 65 },
         { name: "Tailwind CSS", level: 75 },
         { name: "Framer Motion", level: 55 },
+        { name: "TypeScript", level: 65 },
       ],
     },
     design: {
@@ -58,6 +59,7 @@ export const SkillsSection = () => {
     "Vite",
     "Django",
     "Python",
+    "Next.js",
   ];
 
   const toolHoverStyles = {
