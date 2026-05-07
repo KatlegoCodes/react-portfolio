@@ -33,9 +33,10 @@ export const SkillsSection = () => {
       icon: <Database className="w-6 h-6" />,
       linear: "from-[#FFA585] to-[#FFEDA0]",
       technologies: [
-        { name: "Python", level: 50 },
-        { name: "Django", level: 45 },
+        { name: "Python", level: 60 },
+        { name: "Django", level: 55 },
         { name: "Git & GitHub", level: 80 },
+        { name: "Next.js", level: 50 },
       ],
     },
   };
