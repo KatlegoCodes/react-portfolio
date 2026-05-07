@@ -13,6 +13,7 @@ import { Footer } from "./Components/Footer";
 import { ThemeProvider, useTheme } from "./Components/ThemeProvider";
 import Prism from "./Components/Prism";
 import DarkVeil from "./Components/DarkVeil";
+import prismbg from "./assets/prism.png";
 
 const AppContent = () => {
   const { theme } = useTheme();
@@ -20,6 +21,12 @@ const AppContent = () => {
 
   return (
     <Router>
+      {!isDark && (
+        <div
+          className="fixed inset-0 z-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${prismbg})` }}
+        />
+      )}
       {isDark && (
         <div className="fixed inset-0 z-0 transition-opacity duration-500">
           <DarkVeil
