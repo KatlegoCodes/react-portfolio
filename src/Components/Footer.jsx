@@ -20,8 +20,10 @@ export const Footer = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-bold mb-4">Katlego Mashigwana</h3>
-            <p className="text-gray-400 leading-relaxed max-w-md">
+            <h3 className="text-2xl font-bold mb-4 text-center md:text-left">
+              Katlego Mashigwana
+            </h3>
+            <p className="text-gray-400 leading-relaxed max-w-md text-center md:text-left">
               Frontend Developer & Graphic Designer creating beautiful,
               functional digital experiences that blend technical expertise with
               creative vision.
