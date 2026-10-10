@@ -37,7 +37,9 @@ export const SkillsSection = () => {
         { name: "Python", level: 60 },
         { name: "Django", level: 55 },
         { name: "Git & GitHub", level: 80 },
-        { name: "Next.js", level: 50 },
+        { name: "Next.js", level: 75 },
+        { name: "Node.js", level: 50 },
+        { name: "PostgreSQL", level: 50 },
       ],
     },
   };
@@ -60,6 +62,8 @@ export const SkillsSection = () => {
     "Django",
     "Python",
     "Next.js",
+    "Node.js",
+    "PostgreSQL",
   ];
 
   const toolHoverStyles = {
@@ -85,6 +89,9 @@ export const SkillsSection = () => {
     "Framer Motion": "hover:bg-purple-300 hover:text-white",
     Vite: "hover:bg-teal-300 hover:text-white",
     "Adobe InDesign": "hover:bg-fuchsia-300 hover:text-white",
+    "Next.js": "hover:bg-gray-800 hover:text-white",
+    "Node.js": "hover:bg-green-400 hover:text-white",
+    PostgreSQL: "hover:bg-blue-600 hover:text-white",
   };
 
   const defaultHover = "hover:bg-accent hover:text-accent-foreground";

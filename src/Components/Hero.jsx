@@ -63,7 +63,7 @@ export const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.7 }}
           >
-            Graphic Designer turned Front-End Developer
+            Full-Stack Developer & Graphic Designer
           </motion.p>
 
           {/* Description */}
@@ -73,9 +73,9 @@ export const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.9 }}
           >
-            I blend design thinking with modern React development to build fast,
-            beautiful, and interactive web applications that feel as good as
-            they look.
+            I build web applications that blend design and engineering. Whether
+            it's a responsive interface, a backend system, or a data-driven
+            product, I care about making it work well and feel right.
           </motion.p>
         </motion.div>
 
