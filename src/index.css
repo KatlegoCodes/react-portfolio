@@ -60,9 +60,9 @@
   /* Typography */
   --font-family-sans:
     "Inter", "SF Pro Display", -apple-system, BlinkMacSystemFont, system-ui,
-    sans-serif;
+    sans-serif, "Raleway";
   --font-family-mono: "SF Mono", "Fira Code", "Roboto Mono", monospace;
-  --font-family-display: "Playfair Display", serif;
+  --font-family-display: "Raleway", serif;
 
   /* Transitions */
   --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
