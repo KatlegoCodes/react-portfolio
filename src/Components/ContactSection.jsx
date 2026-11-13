@@ -133,7 +133,7 @@ export const ContactSection = () => {
                 <div>
                   <p className="text-xs text-muted-foreground">Phone</p>
                   <a
-                    href="tel:+27620062323"
+                    href="tel:+27670062323"
                     className="text-md md:text-lg text-foreground hover:text-primary transition-colors duration-300"
                   >
                     +27 67 006 2323
